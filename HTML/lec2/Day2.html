@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <table style="border: solid 1px red;">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+        <tr>
+            <td colspan="2">Mo</td>
+            <td>123</td>
+        </tr>
+        <tr>
+            <td rowspan="2" >samy</td>
+            <td>123</td>
+        </tr>
+        <tr>
+            <td  >salah</td>
+            <td>123</td>
+        </tr>
+        <caption align="bottom"><b>Students</b></caption>
+    </table> -->
+
+    <form action="../Day1/Day1.html" method="post">
+      <center><input type="submit" value="submit"></center>  
+
+        <label for="fn">First Name</label>
+        <input id="fn" type="text" size="25" name="txt1" placeholder="Enter you first name">
+
+        <label for="ln">Last Name</label>
+        <input id="ln" type="text" size="25" name="txt2" placeholder="Enter you first name">
+
+        <input type="hidden" name="IDhidden" value="Iam ID">
+
+
+        <input type="password" placeholder="Enter pass" size="25" name="pass">
+        <br>
+        <textarea name="txteara1" cols="70" rows="5">I am in ITI BNS</textarea>
+        <fieldset>
+            <legend>fav sport</legend>
+            <input type="checkbox" name="option1" value="1"> football
+            <br>
+            <input type="checkbox" name="option2" value="2"> basketball
+            <br>
+            <input type="checkbox" name="option3" value="3"> volleyball
+        </fieldset>
+
+        <fieldset>
+            <legend>gender</legend>
+            <input type="radio" name="option1" value="m" checked> Male
+            <br>
+            <input type="radio" name="option1" value="f"> FeMale
+            <br>
+            <input type="radio" name="option1" value="c"> Custom
+            <br>
+        </fieldset>
+        <br>
+        <br>
+        <br>
+        <select name="val1" multiple>
+            <option value="E">Egypt</option>
+            <option value="U">USA</option>
+            <option value="S" selected>Sudan</option>
+            <option value="G">Gaza</option>
+        </select>
+
+        <input type="image" src="../../Day 1/download.png" name="image" width="60" height="60">
+        <input type="file" name="myfile">
+
+        <input type="reset" value="reset">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Registration</title>
+</head>
+<body class="regpage">
+    <div class="regform">
+        <h1>Registration</h1>
+        <form action="thank.html" method="get">
+            <fieldset>
+                <input tabindex="1" type="hidden" name="id">
+                <label for="fname">First name :</label>
+                <input tabindex="2" type="text" name="fname" id="fname" required placeholder="Enter Your First name ">
+                <label for="lastname">Last name :</label>
+                <input tabindex="3" type="text" name="lname" id="lname" value="" placeholder="Enter Your Last name " required>
+                <label for="email">Email :</label>
+                <input tabindex="4" type="email" name="email" id="email" value="" placeholder="Enter Your Email" required>
+            </fieldset>
+            <fieldset>
+                <!-- 3 nums  2chars 1 sym 123aa.-->
+                <label for="password">Password :</label>
+                <input id="password" tabindex="5" type="password" name="passwd" value="" placeholder="ex: abc11#$" required pattern="^(?=(.*\d){3})(?=(.*[a-zA-Z]){2})(?=(.*[\W_]){1}).{6,}$">
+                <label for="repassword">Retype Password :</label>
+                <input  id="repassword"tabindex="6" type="password" name="passwd" value="" placeholder="Re enter Your password " required pattern="^(?=(.*\d){3})(?=(.*[a-zA-Z]){2})(?=(.*[\W_]){1}).{6,}$">
+            </fieldset>
+            <fieldset>
+                <label for="BOD">Birth Date :</label>
+                <input id="BOD"tabindex="7" type="date" name="bod" value="" placeholder="Enter Your BOD " required>
+                <label for="avatar">Upload Your Avatar :</label>
+                <input tabindex="8" id="avatar" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"  required/>
+            </fieldset>
+            <fieldset class="gender-f" tabindex="9">
+                <legend>Gender</legend>
+                <input tabindex="10" type="radio" name="gender" id="male" value="1" required> <label for="male">Male</label>
+                <input tabindex="11" type="radio" name="gender" id="female" value="2" required> <label for="female">Female</label>
+            </fieldset>
+            <fieldset>
+                <legend>University</legend>
+                <select name="university" id="" required>
+                    <option tabindex="12" value="select your uni" selected disabled>select uni</option>
+                    <option tabindex="13" value="Helwan">Helwan</option>
+                    <option tabindex="14" value="Cairo">Cairo</option>
+                    <option tabindex="15" value="Alex">Alex</option>
+                    <option tabindex="16" value="Aswan">Aswan</option>
+                </select>
+            </fieldset>
+
+            <fieldset aria-required="true" class="hoppy">
+                <legend>Interests</legend>
+                <input tabindex="17" type="checkbox" name="programming" id="programming"><label for="programming">Programming</label>
+                <input tabindex="18" type="checkbox" name="reading" id="reading"><label for="reading">reading</label>
+                <input tabindex="19" type="checkbox" name="swimming" id="swimming"><label for="swimming">swimming</label>
+                <input tabindex="20" type="checkbox" name="singing" id="singing"><label for="singing">Singing</label>
+                <input tabindex="21" type="checkbox" name="crafts" id="crafts"><label for="crafts">Crafts</label>
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" name="terms" id="terms" required ><label for="terms"> I agreed to <a class="terms-link" target="_blank" href="terms">Terms and Condition</a> </label>
+            </fieldset>
+            <div class="btn">
+                <input class="submit sgreen" type="submit" value="Submit">
+                <input class="reset sred" type="reset" value="Reset">
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>
+
