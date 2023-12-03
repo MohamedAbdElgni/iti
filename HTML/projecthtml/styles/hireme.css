@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins";
+}
+img {
+  width: 100px;
+}
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px;
+  color: #0c0a0a;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.mostaqel,
+.khamsat {
+  width: 50px;
+  height: 50px;
+}
+
+.upwork {
+  background-color: #6ee16e;
+
+  width: 50px;
+}
+
+.freelancer {
+  background-color: transparent;
+  width: 50px;
+}
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  width: 79vw;
+}
+.parent div {
+  margin: auto;
+  padding: 10px;
+  position: relative;
+}
+
+.card img {
+  height: auto;
+  transition: 0.5s ease-out;
+  box-shadow: 0px 5px 8px rgba(107, 106, 106, 0.5);
+}
+
+.card img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.card:hover::after {
+  content: attr(data-in);
+  display: block;
+  width: fit-content;
+  min-width: 50px;
+  text-align: center;
+  height: fit-content;
+  padding: 2px;
+  border-radius: 2px;
+  position: absolute;
+  background-color: #0c0a0a98;
+  color: #ebe7e7;
+  font-size: 12px;
+  top: 22px;
+  right: -58px;
+}
+
+.card {
+  transition: 0.5s ease-out;
+}
+
+.card:hover::before {
+  left: -12px;
+  content: "";
+  display: block;
+  border-top: 10px solid #1a312bd7;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: rotate(270deg);
+  position: absolute;
+  top: 29px;
+  z-index: 500;
+  transition: 0.5s ease-out;
+}

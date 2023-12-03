@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+html,
+body {
+  width: 100%;
+  height: fit-content;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  
+  
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.con {
+    position: relative;
+    margin: auto;
+    margin-top: 40px;
+    width: 90%;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 20px;
+    padding: 5px;
+    justify-content: center;
+    border-radius: 8px;
+  }
+  
+  .pscon {
+    flex: 1 1 calc(25% - 20px);
+    background-color: rgb(223, 248, 245);
+    overflow: hidden;
+    padding: 5px;
+    padding-top: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 3px solid transparent;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 0px 7px 13px rgba(0, 0, 0, 0.5);
+  }
+  
+  .pscon:hover {
+    transform: scale(1.2);
+    border-bottom: 3px solid black;
+  }
+  
+  .img-con img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .ptit {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .ptit a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  .ptit a:hover {
+    background-color: #95e9d19f;
+    color: rgb(14, 129, 66);
+    cursor: pointer;
+  }
+  
+  .pinfo {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    text-align: justify;
+  }
+  
+  .linkscon {
+    text-align: center;
+    margin-top: 10px;
+    display: hidden;
+    opacity: 0; /* Initially set opacity to 0 */
+    transition: 0.3s ease-in-out;
+  }
+  
+  .pscon:hover .linkscon {
+    display: block;
+    opacity: 1; /* Show linkscon on hover */
+  }
+  
+  .linkscon img {
+    width: 50px;
+    height: auto;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .linkscon li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+.linkscon img:hover{
+  scale: 1.5;
+}
+
+
+@media (max-width: 700px) {
+  .con{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pscon{
+    width: 60%;
+  }
+
+}
