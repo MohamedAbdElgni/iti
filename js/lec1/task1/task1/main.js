@@ -145,5 +145,5 @@ function rangeDisplay(){
 
 //^1.4
 
-//* rangeDisplay()
+// rangeDisplay()
 
