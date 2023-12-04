@@ -1,7 +1,10 @@
 
-//*helper func for task 3 and 4 to handel user input
+//^helper func for task 3 and 4 to handel user input
 function get(task){
-    //*helper function for task 3 and 4
+    /*
+    helper function for task 3 and 4
+        to validate the input
+    */
     let x
     let y
     let z
@@ -13,16 +16,14 @@ function get(task){
             console.log("%cPlease enter a valid number for X", 'color: red');
             alert("Please Enter A valid Number for task 3")
             return get(task=3);
-        }
-        
-        else{
+            
+        }else{
             y = prompt("Enter the Y : ");
             
             z = prompt("Enter the Z : ");
             return {x , y , z};
 
         }
-
         break;
         case 4:
             x= prompt("Enter the X : ");
@@ -37,6 +38,7 @@ function get(task){
             else {
                 return {x , y , z};
             }
+        break;
     }
 }
 
@@ -46,10 +48,9 @@ function get(task){
 function bigh(){
     let msg = prompt('Enter your message :-')
     for(let i = 1 ; i < 7 ; i++){
-        document.write("<h"+ i + ">" + msg + " --H==>"+ "i" +"</h"+ i + ">" )
+        document.write("<h"+ i + ">" + msg + " --H==>"+ i +"</h"+ i + ">" )
     }
 }
-
 
 
 //^1.2
@@ -67,7 +68,7 @@ function task2(){
             console.log("%cTotal now is --> " + total,'color:green');
         }
         else{
-            console.log("%cClosing program Total now is more than 100-->  " +total +,'color:red');
+            console.log("%cClosing program Total now is more than 100-->  " +total ,'color:red');
             break;
         }
         
@@ -133,17 +134,15 @@ function rangeDisplay(){
 
 
 
-
-//^1.1
+//^1.1-s
 // bigh()
 
-//^1.2
+//^1.2-s
 // task2()
 
-//^1.3
+//^1.3-s
 // task3()
 
-//^1.4
-
+//^1.4-s
 // rangeDisplay()
 
