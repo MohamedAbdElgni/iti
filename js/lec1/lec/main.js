@@ -138,13 +138,80 @@
 
 
 //! ######## Functions #####
-
+//^decleration
 // function name(args){
 //     return val
 // }
 
+//^ fun exp
 
-//& more solid than the sec one
+/*
+    let sub = funcyion(x,y){
+        return x-y
+    }
+*/
+
+//^arrrow fn
+
+/*
+    let add = (x,y)=> x+y
+    let add = (x,y)=> {
+        logic
+        
+        return x+y}
+
+*/
+
+//^IIFIv1 -->imMd fun exp ()()
+
+/*
+        (function(){
+            consol.log('hello')
+        }
+
+        )()
+ */
+
+//^IIFIv2 -->imMd fun exp ()()
+
+
+/*
+        (function(){
+            consol.log('hello')
+        }
+
+        ())
+ */
+
+//^IIFIv3 -->imMd fun exp ()()
+
+
+/*
+        !function(){
+            consol.log('hello')
+        }
+
+        ()
+ */
+
+
+//^IIFIv4 -->immd fun exp ()()
+
+
+/*
+        void function(){
+            consol.log('hello')
+        }
+        ()
+ */
+
+//^ call back functions or anymonous
+
+
+
+
+
+//& first more solid than the sec one
 // function sum(x,y){
 //     return x+y
 // }
