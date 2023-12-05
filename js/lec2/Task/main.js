@@ -83,6 +83,43 @@ function task5(){
     document.write(`<p style="text-transform:capitalize;"><b><u>First Name</u></b>: ${uname.split(' ')[0]}</p><p style="text-transform:capitalize;"><b><u>Last Name</u></b>: ${uname.split(' ').length > 1 ? uname.split(' ').slice(1).join(' '):''}</p><p><b><u>Email</u></b>: ${uemail}</p>`);
 }
 
+function palindrome(){
+    let wordVal = new RegExp(/^[A-Za-z]+$/)
+    let askVal = new RegExp(/^(yes|no|y|n)$/i)
+    let word
+    let ask
+    while (!(wordVal.test(word = prompt("Enter a Word")))){
+        alert("Enter a valid word!!");
+    };
+
+    while (!(askVal.test(ask = prompt("Consider cases?! yes(y) or no (n):-").toLowerCase()))){
+        alert("Enter a valid answer yes(y) or no (n)");
+
+    };
+
+    if(ask==='n'||ask=='no'){
+        word = word.toLocaleLowerCase()
+    }
+    let wordChk = word.split('').reverse().join('')
+    if(word===wordChk){
+        alert(`${word} is palindrome`)
+    }else{
+        alert(`${word} is not palindrome`)
+    }
+    let con
+    while (!(askVal.test(con = prompt("you want to continue?! yes(y) or no (n):-").toLowerCase()))){
+        alert("Enter a valid answer yes(y) or no (n)");
+    };
+
+    if(con==='n'||con=='no'){
+        alert('Thank you!!!')
+    }else{
+        palindrome()
+    }
+
+
+}
+
 
 //^1.1
 // task1()
@@ -95,4 +132,10 @@ function task5(){
 //^1.5
 // task5()
 
-console.log('B'==='b')
+//^1.6
+// palindrome()
+
+
+
+
+
