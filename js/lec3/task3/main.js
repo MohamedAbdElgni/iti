@@ -21,7 +21,7 @@ function tips(){
             'Don\'t Be Afraid To Practice',
             'Connect With A Mentor',
             'Understand Every Line Of Your Code',
-            'Always Have A Reference Guide Handy'
+            'Always Have A Reference Guide Handy',
         ]
     randint = Math.floor(Math.random()*(arr.length))
     alert(arr[randint])
@@ -31,7 +31,7 @@ function tips(){
 
 //^1.5
 function oBs(){
-    students = [
+    let students = [
         {
             name:'mohamed',
             degree:60,
@@ -73,17 +73,60 @@ function oBs(){
             degree:50,
         },
         {
-            name:'emad',
+            name:'emad ahmed',
             degree:40,
         },
         
 
     ]
-    let student_90 = students.find((a)=> a.degree>=90&&a.degree<=100)//a
+    console.log(students)
+    let student_90 = students.find((a)=> a.degree>=90&&a.degree<=100)//*a
     console.log(`${student_90.name} got ${student_90.degree}`)
-    let students_60 = students.filter((a)=> a.degree<60)//b
-    console.log(students_60)
 
+    let students_60 = students.filter((a)=> a.degree<60)//*b
+    console.log(students_60 );
+
+    students.push({name:'nader',degree:77});//*c
+    console.log('------------','color:red')
+    for(student in students){
+        console.log("%cstudent name --> "+students[student].name + " Degree --> " +students[student].degree ,'color:yellow')
+    }//*c
+    
+    students.pop(); //*d
+    console.log('%c-----------------------','color:red')
+    for(let i of students){
+        console.log("%cstudent name --> "+i.name + " Degree --> " +i.degree ,'color:yellow')
+    }
+
+
+    // console.log(students.sort(function(a,b){
+    //     return b.degree - a.degree;
+    // }));
+
+    console.log(students.sort(function(a,b){
+        if (a.name.charAt(0).toLowerCase()<b.name.charAt(0).toLowerCase()
+        ) return -1;
+        if (a.name.charAt(0).toLowerCase()>b.name.charAt(0).toLowerCase()
+        )return 1;
+        return 0;
+    }))
+    
+
+    // students.splice(2,0,{ name: 'hossam', degree: 91 },{ name: 'dina ahmed', degree: 88 })//*f
+    // students.splice(3,1)//*f
 }
 
-oBs()
+//^6
+
+function birth(){
+    let ubirth
+    do{
+        ubirth = prompt('enter your birth date in this formate DD \– MM – YYYY')
+        alert('wrong formate!!!')
+
+    }while(ubirth.indexOf('-')!==2 && ubirth.lastIndexOf('-')!==5 && ubirth.length!=0)
+    let d = new Date(ubirth)
+    console.log(d)
+}
+
+birth()
