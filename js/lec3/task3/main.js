@@ -9,6 +9,7 @@ function cArea(){
     alert(`Area is "${(Math.PI*(radius*radius))}" cm2`)
 
 }
+// cArea()
 //^1.2
 function sqRt(){
     let num
@@ -20,6 +21,8 @@ function sqRt(){
     alert(`square root of ${num} is ---> "${Math.sqrt(num)}" `)
 
 }
+// sqRt()
+
 //^1.3
 function cos(){
     let num
@@ -28,10 +31,11 @@ function cos(){
         alert(`please enter numbers only '${num}' is not a number`)
     }
     num = Number(num)
-    console.log((((Math.PI * num) / 180)).toFixed(10))
-    console.log((((Math.PI * num) / 180)))
+    // console.log((((Math.PI * num) / 180)).toFixed(10))
+    // console.log((((Math.PI * num) / 180)))
     document.write(`cos of  ${num}&#176 is ---> ${(Math.cos(((Math.PI * num) / 180)).toFixed(4))}`)
 }
+// cos()
 
 //^1.4
 function tips(){
@@ -49,6 +53,7 @@ function tips(){
     // console.log(randint)
     // console.log(Math.random()*7)
 }
+// tips()
 
 //^1.5
 function oBs(){
@@ -108,21 +113,22 @@ function oBs(){
     console.log(students_60 );
 
     students.push({name:'nader',degree:77});//*c
-    console.log('------------','color:red')
+    console.log('----------for in-----------------','color:white')
     for(student in students){
         console.log("%cstudent name --> "+students[student].name + " Degree --> " +students[student].degree ,'color:yellow')
     }//*c
     
     students.pop(); //*d
-    console.log('%c-----------------------','color:red')
+    console.log('%c----------for of-------------','color:white')
     for(let i of students){
         console.log("%cstudent name --> "+i.name + " Degree --> " +i.degree ,'color:yellow')
     }
 
-
+    console.log('%c---------sort deg--------------','color:white')
     // console.log(students.sort(function(a,b){
     //     return b.degree - a.degree;
     // }));
+    console.log('%c----------sort name-------------','color:white')
 
     console.log(students.sort(function(a,b){
         if (a.name.charAt(0).toLowerCase()<b.name.charAt(0).toLowerCase()
@@ -136,6 +142,7 @@ function oBs(){
     // students.splice(2,0,{ name: 'hossam', degree: 91 },{ name: 'dina ahmed', degree: 88 })//*f
     // students.splice(3,1)//*f
 }
+oBs()
 
 //^6
 
@@ -160,15 +167,6 @@ function birth(){
                 alert('please Enter a valid date dd-mm-yyyy')
             }
         }
-    
-    
     }
-
-    
-
 }
-
-
-
-
-birth()
+// birth()
