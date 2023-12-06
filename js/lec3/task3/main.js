@@ -10,9 +10,28 @@ function cArea(){
 
 }
 //^1.2
-function sqRt(){}
+function sqRt(){
+    let num
+    let numVal = new RegExp(/^([1-9]\d*(\.\d*)?|\.\d+)$/)
+    while(!(numVal.test(num = prompt('Enter number to calculate the square root:-')))){
+        alert(`please enter numbers only '${num}' is not a number`)
+    }
+    num = parseFloat(num)
+    alert(`square root of ${num} is ---> "${Math.sqrt(num)}" `)
+
+}
 //^1.3
-function cos(){}
+function cos(){
+    let num
+    let numVal = new RegExp(/^([1-9]\d*(\.\d*)?|\.\d+)$/)
+    while(!(numVal.test(num = prompt('Enter degree to calculate the cos:-')))){
+        alert(`please enter numbers only '${num}' is not a number`)
+    }
+    num = Number(num)
+    console.log((((Math.PI * num) / 180)).toFixed(10))
+    console.log((((Math.PI * num) / 180)))
+    document.write(`cos of  ${num}&#176 is ---> ${(Math.cos(((Math.PI * num) / 180)).toFixed(4))}`)
+}
 
 //^1.4
 function tips(){
@@ -22,6 +41,8 @@ function tips(){
             'Connect With A Mentor',
             'Understand Every Line Of Your Code',
             'Always Have A Reference Guide Handy',
+            'JS don\'t have capitalize method.. what a joke!!!',
+            'JS has concept called hoisting !!!'
         ]
     randint = Math.floor(Math.random()*(arr.length))
     alert(arr[randint])
@@ -119,14 +140,35 @@ function oBs(){
 //^6
 
 function birth(){
-    let ubirth
-    do{
-        ubirth = prompt('enter your birth date in this formate DD \– MM – YYYY')
-        alert('wrong formate!!!')
+    let ubirth 
+    let valArr
 
-    }while(ubirth.indexOf('-')!==2 && ubirth.lastIndexOf('-')!==5 && ubirth.length!=0)
-    let d = new Date(ubirth)
-    console.log(d)
+    while(true){
+        ubirth = prompt('enter the date:-').split('-')
+        if(ubirth){
+            let bd = parseInt(ubirth[0])
+            let bm = parseInt(ubirth[1])
+            let by = parseInt(ubirth[2])
+            valArr = [(bd<32&&bd!=0),(bm<13&&bm!=0),(by<2023&&by!=0 && by>1800)]
+            if(valArr.every((a)=>a===true)){
+                let date = new Date(`${by}-${bm}-${bd}`)
+
+                console.log(`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`)
+                break;
+            }else{
+                alert('invalid date ' + ubirth.join('-'))
+                alert('please Enter a valid date dd-mm-yyyy')
+            }
+        }
+    
+    
+    }
+
+    
+
 }
+
+
+
 
 birth()
