@@ -73,5 +73,5 @@ prevtbtn.addEventListener('click',function(){
         console.log(counter)}
 })
 
-//get the first image showing
+
 
