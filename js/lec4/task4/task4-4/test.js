@@ -25,11 +25,32 @@ var prop=[
         value:['red','blue','green','black']
     }},
 ]
-var box = document.querySelector('.box');
+const box = document.querySelector('.box');
 var text = document.querySelector('.text');
 
 for (const x of prop) {
+    console.log('-------------------iam X from outer-------------------')
+    console.log(x)
+    console.log('-------------------try slice x-------------------')
+    console.log(x[0])
+    console.log('---------------so we used Object.keys(x)[0]- to get it from the arr ---big obj from outer--------------------')
+    console.log(Object(x))
+    console.log('------------------its title[0] from outer---------------------')
+    console.log(Object.keys(x)[0]) //*this is the title
+    console.log('------------------its title[1]---------------------')
+    console.log(Object.keys(x)[1]) //*undfff
+    console.log('------------------keys from outer---------------------')
+    console.log(Object.keys(x)) 
+    console.log('------------------iam values from outer---------------------')
+    console.log(Object.values(x))
+    console.log('------------------iam values[0] from outer---------------------')
+    console.log(Object.values(x)[0])
+    console.log('------------------iam value___ from outer---------------------')
+    console.log(Object.values(x)[0].value) 
+    console.log('------------------iam valueZZ___ from outer---------------------')
     console.log(Object.values(x)[0].values) 
+    
+
     const col = document.createElement('div');
     col.classList.add('col');
     
@@ -41,7 +62,13 @@ for (const x of prop) {
     rbox.classList.add('rbox');
 
     for (const value of Object.values(x)[0].value) {
-
+        console.log('-------------------iam X from inner--------------------')
+        console.log(x)
+        console.log('-------------------iam value from inner--------------------')
+        console.log(value)
+        console.log('-------------------big obj from inner loob--------------------')
+        console.log(Object(x))
+        console.log('-------------------obj values x from inner loob--------------------')
         console.log(Object.values(x))
         const rad = document.createElement('input');
         rad.type = 'radio';
