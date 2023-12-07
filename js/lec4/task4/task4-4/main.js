@@ -48,7 +48,7 @@ for (const x of prop) {
     console.log('------------------iam value___ from outer---------------------')
     console.log(Object.values(x)[0].value) 
     console.log('------------------iam valueZZ___ from outer---------------------')
-    console.log(Object.values(x)[0].value) 
+    console.log(Object.values(x)[0].values) 
     
 
     const col = document.createElement('div');
