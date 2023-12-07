@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.con{
+    width: 60vw;
+    height: fit-content;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.box{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.box input{
+    align-self: flex-start;
+    background-color: rgb(210, 240, 230);
+    min-width: 70%;
+    height: 20px;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.box button{
+    width: 50px;
+
+}
+
+.tasks{
+    margin: auto;
+    text-align: center;
+}
+
+.task{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.task span{
+    align-self: flex-start;
+    background-color: aquamarine;
+    min-width: 50vw;
+    height: 30px;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.task #done,.task #delete{
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(214, 184, 145);
+}
+
+button{
+    cursor: pointer;
+}
