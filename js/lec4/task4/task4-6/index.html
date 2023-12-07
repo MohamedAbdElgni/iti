@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 4-6</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        all = document.body
+
+        all.addEventListener('contextmenu',(a)=> a.preventDefault())
+
+        all.addEventListener('keydown',(e)=>{
+            document.write(e.keyCode);
+            console.log(e.key)
+        })
+    </script>
+</body>
+</html>
