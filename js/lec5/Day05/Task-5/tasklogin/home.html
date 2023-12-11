@@ -7,7 +7,30 @@
     <link rel="stylesheet" href="styles/home.css">
     <title>Home</title>
 </head>
-<body>
+<body onload="getUser()">
+	
+	<header>
+		<div class="container">
+			<nav>
+				<div class="logo">
+					<span class="title"> <a href="home.html">Welcome</a></span>
+				</div>
+				<div class="nav-link">
+					<ul>
+						<li class="nav-item"><a href="login.html" id="loginButton">Login</a></li>
+                        
+						<li class="nav-item"><a onclick="logout()" id="logoutButton">Logout</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
     
+	<main class="container">
+		
+	</main>
+	
+	<script src="/scripts/home.js"></script>
 </body>
+
 </html>

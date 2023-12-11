@@ -1,16 +1,162 @@
-*{
-    margin: 0;
-    padding:0;
-    font-family: 'MesloLGS NF';
-    font-weight: normal;
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'MesloLGS NF Regular';
+	font-size: 16px;
+	color: rgb(59, 59, 59);
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+
+.container {
+	width: 70%;
+	margin: auto;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	
+	background: black;
+	display: flex;
+	flex-direction: row;
+	z-index: 999;
+    color: white;
+}
+main {
+	margin-top: 70px !important;
+}
+nav {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: space-between;
+}
+.auth-main {
+	margin: auto !important;
+}
+.nav-link {
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+}
+.nav-link > ul {
+	display: flex;
+	align-items: center;
+}
+.nav-item {
+	margin-right: 15px;
+}
+.nav-item > a {
+	display: inline-block;
+	padding-bottom: 2px;
+	position: relative;
+}
+.nav-item > a:after {
+	background: none repeat scroll 0 0 transparent;
+	bottom: 0;
+	content: "";
+	display: block;
+	height: 2px;
+	left: 50%;
+	position: absolute;
+	background: rgb(8, 155, 147);
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
+}
+
+
+
+.nav-item > a:hover:after {
+	width: 100%;
+	left: 0;
+}
+.active a::after {
+	width: 100%;
+	left: 0;
+}
+
+
+.logo {
+	align-content: flex-start;
+	padding: 10px 10px 12px 10px;
+	font-weight: 800;
+	font-size: 1.5em;
+	align-content: center;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-input {
+	margin: 10px 0px;
+	border-bottom: 1px solid #ccc;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	padding: 10px 0px;
+	font-size: 18px;
+}
+
+
+.btn {
+	width: auto;
+	margin: 15px 0px;;
+	padding: 10px 25px;
+	background: black;
+	border-radius: 3px;
+	border: none;
+	color: #eee;
+	cursor: pointer;
+}
+.btn:hover {
+	background: linear-gradient( 68.1deg,  rgb(48, 91, 143) 5.8%, rgb(38, 46, 59) 98.1% );
+	transition: ease 300ms;
+}
+
+
+main {
+    position: relative;
+}
+
+main h2 a ,form em a{
+    color: rgb(21, 117, 64);
+    animation: colors linear infinite;
+    animation-duration: 3s;
+    animation-delay: .5s;
+}
+
+@keyframes colors {
+    0% {
+        color: rgb(0, 255, 179);
+    }
     
-}
-
-ul li{
-    list-style: none;
-}
-
-body{
-    width:100vw;
-    height: 100vh;
+    50% {
+        color: rgb(0, 240,70);
+    }
+    100% {
+        color: rgb(8, 184, 146);
+    }
 }
