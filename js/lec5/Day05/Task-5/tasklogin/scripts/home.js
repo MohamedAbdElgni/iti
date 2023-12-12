@@ -3,7 +3,7 @@ function getUser() {
         document.getElementById('loginButton').style.display = 'none'
         let welcome = document.querySelector('main')
         welcome.innerHTML = `
-            <h2>Hello ${sessionStorage.getItem('currUserName')}</h2>
+            <h2 style="text-transform:capitalize">Hello ${sessionStorage.getItem('currUserName')}</h2>
         `
     } else {
 

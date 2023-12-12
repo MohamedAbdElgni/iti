@@ -22,8 +22,6 @@ a {
 }
 
 input:focus,
-select:focus,
-textarea:focus,
 button:focus {
 	outline: none;
 }
@@ -71,30 +69,17 @@ nav {
 	display: inline-block;
 	padding-bottom: 2px;
 	position: relative;
-}
-.nav-item > a:after {
-	background: none repeat scroll 0 0 transparent;
-	bottom: 0;
-	content: "";
-	display: block;
-	height: 2px;
-	left: 50%;
-	position: absolute;
-	background: rgb(8, 155, 147);
-	transition: width 0.3s ease 0s, left 0.3s ease 0s;
-	width: 0;
+	font-weight: bolder;
 }
 
 
 
-.nav-item > a:hover:after {
-	width: 100%;
-	left: 0;
+
+.nav-item > a:hover,.logo:hover {
+	color:rgb(40, 172, 99);
+	
 }
-.active a::after {
-	width: 100%;
-	left: 0;
-}
+
 
 
 .logo {
@@ -130,9 +115,10 @@ nav {
 	border: none;
 	color: #eee;
 	cursor: pointer;
+	font-weight: bold;
 }
 .btn:hover {
-	background: linear-gradient( 68.1deg,  rgb(48, 91, 143) 5.8%, rgb(38, 46, 59) 98.1% );
+	background: rgb(37, 136, 82);;
 	transition: ease 300ms;
 }
 
@@ -142,21 +128,9 @@ main {
 }
 
 main h2 a ,form em a{
-    color: rgb(21, 117, 64);
+    color: rgb(47, 173, 104);
     animation: colors linear infinite;
     animation-duration: 3s;
     animation-delay: .5s;
-}
-
-@keyframes colors {
-    0% {
-        color: rgb(0, 255, 179);
-    }
-    
-    50% {
-        color: rgb(0, 240,70);
-    }
-    100% {
-        color: rgb(8, 184, 146);
-    }
+	font-weight: bolder;
 }

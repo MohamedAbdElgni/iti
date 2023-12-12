@@ -1,16 +1,14 @@
 class User {
-    constructor(id, name, email, password, role) {
-        this.id = id;
+    constructor( name, email, password) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.role = role;
+        
     }
 }
 
 // register User
 function register() {
-    let id = Math.floor(Math.random() * 1000000);
     let firstName = document.getElementById('firstName').value;
     let lastName = document.getElementById('lastName').value;
     let name = firstName + " " + lastName;
@@ -27,7 +25,7 @@ function register() {
             return;
         }
 
-        users.push(new User(id, name, email, password));
+        users.push(new User(name, email, password));
         localStorage.setItem('Users', JSON.stringify(users));
     } else {
 
@@ -55,7 +53,7 @@ function login() {
     }
 
     if (isAuthUser) {
-        sessionStorage.setItem('currUserName', user.name.split(' ')[0]);
+        sessionStorage.setItem('currUserName', user.name);
         sessionStorage.setItem('currUserId', user.id);
         sessionStorage.setItem('currUserEmail', user.email);
         sessionStorage.setItem('isAuthenticated', true);
