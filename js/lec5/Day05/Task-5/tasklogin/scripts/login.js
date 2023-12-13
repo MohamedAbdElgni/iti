@@ -7,7 +7,7 @@ class User {
     }
 }
 
-// register User
+//^ register User
 function register() {
     let firstName = document.getElementById('firstName').value;
     let lastName = document.getElementById('lastName').value;
@@ -35,7 +35,7 @@ function register() {
     window.alert("User successfully created. Now login to continue!");
 }
 
-// login user
+//^ login user
 function login() {
     let email = document.getElementById('loginEmail').value;
     let password = document.getElementById('loginPassword').value;

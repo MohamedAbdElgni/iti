@@ -42,7 +42,8 @@ header {
     color: white;
 }
 main {
-	margin-top: 70px !important;
+	margin-top: 50px !important;
+	margin-bottom: 0;
 }
 nav {
 	display: flex;
@@ -50,9 +51,7 @@ nav {
 	width: 100%;
 	justify-content: space-between;
 }
-.auth-main {
-	margin: auto !important;
-}
+
 .nav-link {
 	align-items: center;
 	justify-content: center;
@@ -93,6 +92,7 @@ nav {
 .form-container {
 	display: flex;
 	flex-direction: column;
+	margin: auto;
 }
 
 .form-input {
@@ -125,6 +125,7 @@ nav {
 
 main {
     position: relative;
+	height: fit-content;
 }
 
 main h2 a ,form em a{
@@ -133,4 +134,95 @@ main h2 a ,form em a{
     animation-duration: 3s;
     animation-delay: .5s;
 	font-weight: bolder;
+}
+
+.con{
+	background-color: rgb(238, 238, 238);
+	border-radius: 5px;
+	position: relative;
+	margin:auto;
+	margin-top: 0;
+	display: flex;
+	padding: 5px;
+	justify-content: flex-start;
+	width: fit-content;
+	max-width: 980px;
+	flex-wrap: wrap;
+	display: none;
+	
+}
+
+
+
+.card{
+	width: 300px;
+	padding: 10px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+
+
+.card-img img{
+	width: 100%;
+}
+
+.card-body{
+	text-align: center;
+}
+
+.card-body p{
+	margin-bottom: 5px;
+}
+
+.ptitle{
+	text-align: center;
+	width: 100%;
+}
+
+.pdesc{
+	text-align: justify;
+}
+
+.conbtns > .btn{
+	cursor: pointer;
+	border: 0;
+	padding: 5px;
+	border-radius: 5px;
+	font-weight: 800;
+	text-align: center;
+	transition: all ease-in-out .25s;
+}
+
+.conbtns>.buy{
+	background-color: rgb(20, 160, 92);
+	color: #fdfdfd;
+}
+
+.conbtns > .addtc{
+	background-color: rgb(226, 20, 60);
+	color: #ffffff;
+}
+
+.conbtns > .btn:hover{
+	color: #ccc;
+	background-color: rgb(0, 0, 0);
+}
+
+.card-body .pprice{
+	text-align: left;
+}
+
+.card-body .pprice span{
+	font-weight: 700;
+}
+
+footer{
+	position: relative;
+	bottom: 0;
+	height: 5vh;
+	background-color: black;
+	text-align: center;
 }
