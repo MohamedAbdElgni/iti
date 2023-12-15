@@ -1,11 +1,15 @@
 class User {
-    constructor( name, email, password) {
+    constructor(name, email, password) {
         this.name = name;
         this.email = email;
         this.password = password;
-        
+
     }
 }
+
+$(document).ready(function () {
+    $('#firstName').focus()
+})
 
 //^ register User
 function register() {
@@ -35,6 +39,13 @@ function register() {
     window.alert("User successfully created. Now login to continue!");
 }
 
+
+$(document).ready(function () {
+    $('#loginEmail').focus()
+})
+
+
+
 //^ login user
 function login() {
     let email = document.getElementById('loginEmail').value;
@@ -43,6 +54,8 @@ function login() {
     let user;
     let isAuthUser = false;
     var i;
+
+
     for (i = 0; i < users.length; i++) {
         user = users[i];
         if (user.email === email && user.password === password) {
@@ -59,7 +72,9 @@ function login() {
         sessionStorage.setItem('isAuthenticated', true);
         window.location = 'home.html'
     } else {
-        window.alert("Invalid email or incorrect password. Try Again!");
+
+        $('.log-err').addClass('invaid').hide().text('invalid login').fadeIn(1000)
+
     }
 }
 

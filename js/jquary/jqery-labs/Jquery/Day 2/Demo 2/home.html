@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <style>
+        div{
+            background-color: rgb(161, 205, 161);
+            width: 200px;
+            height: 300px;
+            border: 2px solid salmon;
+            padding: 10px;
+            margin: 20px;
+            position: absolute;
+        }
+    </style>
+    <p>hello paragraph</p>
+    <div>
+        <h1>hello World</h1>
+    </div>
+<input type="text" value="mohammed">
+    <button>click me</button>
+
+
+    <script> 
+       
+        $(document).ready(function(){
+            
+            $.fn.colorfy = function(text = "i am html element", myclr = "red"){
+                $(this).after(text)
+                $(this).css("color", myclr)
+            }
+
+            $("h1").colorfy("i am head", "blue")
+            $("button").colorfy("i am button", "orange")
+            $("p").colorfy()
+
+
+
+
+
+        })
+        
+    </script>
+</body>
+</html>

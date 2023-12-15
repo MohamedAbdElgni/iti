@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <style>
+        div{
+            background-color: rgb(161, 205, 161);
+            width: 200px;
+            height: 300px;
+            border: 2px solid salmon;
+            padding: 10px;
+            margin: 20px;
+        }
+    </style>
+    <div>
+        <h1>hello World</h1>
+    </div>
+
+    <button>click me</button>
+
+
+    <script> 
+        $(document).ready(function(){
+            // without child selector
+        //    $("div").one("click",function(){
+        //         // $("div").css("background-color", "blue");
+        //         alert("clicked ")
+
+        //    })
+            // with child selector
+        // $("div").one("click", "h1",function(){
+        //     alert("clicked ")
+        //    })
+            // with data 
+            var usersInfo = {
+                name: "ahmed",
+                age: 22,
+                email: "ahmed@gmail.com"
+            }
+
+        // $("div").one("click mouseover", "h1" ,usersInfo ,function(info){
+        //         // console.log(info)
+        //         alert("hello " + info.data.name + info.data.age + info.data.email  )
+        //    })
+
+
+        $("div").one({
+            click: function(info){
+                alert("clicked " + info.data.name)
+            }, 
+            mouseover: function(info){
+                alert("mouseover " + info.data.age )
+            }
+        }, "h1", usersInfo)
+
+
+
+
+
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-lec-1</title>
+</head>
+<body>
+    <header>
+        <h1 id="head">hello jquery</h1>
+        <h1 id="head1">hello test</h1>
+        <span class="test">asdsad</span>
+    </header>
+    
+    <button id="hide">click hide</button>
+    <button id="show">click show</button>
+    <script src="jq.js"></script>
+    <script>
+        //$(html tag or selector).action
+        $(document).ready(function(){
+            $('#hide').click(function(){$('h1').fadeOut(500)})
+            $('#show').click(function(){$('h1').show(500)})
+
+        })
+
+    </script>
+</body>
+</html>
