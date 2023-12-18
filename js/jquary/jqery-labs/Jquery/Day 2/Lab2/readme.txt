@@ -2,7 +2,7 @@ Required Assignments to be delivered:
 =====================================
 
 1- Font Resizer.[done]
-2- Box Animator.
+2- Box Animator.[done]
 3- Box Generator.
 4- Author any basic jQuery Plugin ( except greenify :D )
 

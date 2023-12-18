@@ -33,7 +33,7 @@ function register() {
         localStorage.setItem('Users', JSON.stringify(users));
     } else {
 
-        localStorage.setItem('Users', JSON.stringify([new User(id, name, email, password)]));
+        localStorage.setItem('Users', JSON.stringify([new User(name, email, password)]));
     }
     window.location = 'login.html';
     window.alert("User successfully created. Now login to continue!");
@@ -67,7 +67,6 @@ function login() {
 
     if (isAuthUser) {
         sessionStorage.setItem('currUserName', user.name);
-        sessionStorage.setItem('currUserId', user.id);
         sessionStorage.setItem('currUserEmail', user.email);
         sessionStorage.setItem('isAuthenticated', true);
         window.location = 'home.html'
