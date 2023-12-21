@@ -20,7 +20,7 @@
 		.green{
 			background-color:green ;
 		}
-		
+
 		.orange{
 			background-color:orange;
 		}
@@ -48,11 +48,11 @@
 				
 				$div.attr('base-color', myColors[dBCI]);
 				$div.attr('sec-color', myColors[nsci]);
-				//debug
+				
 				console.log(nsci)
 				$div.hover(function () {
 					$div.toggleClass($div.attr('sec-color'));
-				//debug
+				
 
 				$div.on('mouseover', function () {
 					$div.addClass($div.attr('sec-color'));
@@ -62,9 +62,9 @@
 					$div.removeClass($div.attr('sec-color'));
 				});
 
-					console.log($div.attr('base-color')+ ' base')
+					/*console.log($div.attr('base-color')+ ' base')
 					console.log(nsci)
-					console.log($div.attr('sec-color')+' sec')
+					console.log($div.attr('sec-color')+' sec')*/
 				});
 				$div.one('click', function () {
 					var newDiv = $('<div>').addClass($div.attr('sec-color'));

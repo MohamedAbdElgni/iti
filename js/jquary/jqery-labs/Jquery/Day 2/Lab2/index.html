@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 <head>
-	<title>JQuery Day 1</title>
+	<title>Jq plg</title>
 	<style type="text/css">
 		
-		input{
-			padding:10px 20px 10px 20px;
+		div{
+			background-color: red;
+			width: 100px;
+			height: 100px;
+			cursor: pointer;
+			text-align: center;
+
 					}
 	</style>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
 	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-	<script type="text/javascript" src="js/another.js"></script>
+	
 
 <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
@@ -27,10 +32,36 @@
 	<button id="increase"> + </button>
 	<br>
 	<p class="error"></p> -->
-	<div class="red"></div>
+	<div>Just click me</div>
 	
 	<script>
 		
+		$.fn.move = function(){
+			$(this).css({
+				"position":"relative",
+				"left":"0px"
+			});
+			var left = 0;
+			var top = 0;
+			var width = $(window).width();
+			var height = $(window).height();
+			var that = $(this);
+			setInterval(function(){
+				left = Math.floor(Math.random() * width);
+				top = Math.floor(Math.random() * height);
+				that.animate({
+					"left":left,
+					"top":top
+				},1000);
+			},1000);
+		}
+	
+
+		$(document).ready(function(){
+			$("div").click(function(){
+				$(this).move();
+			});
+		});
 	</script>
 </body>
 </html>
