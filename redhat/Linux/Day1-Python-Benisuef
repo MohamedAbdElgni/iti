@@ -1,0 +1,353 @@
+Poweron ---> BIOS (Check on HW )--> Bootloader (Ubuntu-Windows)--> kernel --> Systemd
+Shell ---> 
+Terminal ---> 
+
+USer----- GUI / CLI ---->APP
+Command Line Interface 
+			==================================
+APP ---  API ---> APP 
+APplication Programming Interface  
+APP --- System calls (API)---> OS 
+
+API + Internet ---> Web Service 
+API + Internet + Rules (http) + FormatData(JSON-XML) ===> RestFULAPI 
+
+APP(Frontend) React ===> API ===> Backend(Django , flask , fastAPI)
+			==================================
+APIS
+======
+SOAP 
+RestFul API 
+GraphQL 
+GPRC 
+			==================================
+Command Line Interface  : - 
+==================================
+Terminal <---> Shell (Interperter)<---> Kernel 
+
+Shell (Interperter)
+==========================
+Bash , sh , ksh , zsh ,python .....................
+			==================================
+echo $SHELL
+/bin/bash
+
+String Bash :-
+================
+words 
+"words"
+'word'
+			==================================
+mina@mina-G5-5500:~$ x=5
+mina@mina-G5-5500:~$ echo x
+x
+mina@mina-G5-5500:~$ echo $x
+5
+			==================================
+why using CLI ? 
+=======================
+1- faster  & powerful
+	touch /home/mina/Music/file
+	touch /home/mina/Music/file{1..300}
+	touch ~/Music/file ~/Pictures/test2/file2
+	mkdir ~/Music/dir1 ~/Pictures/test2/dir2
+	mkdir ~/Music/dir{a..d}
+	-------------------------------
+2- Different Distrubition (OS)
+Linux not os --> kernel 
+Technical Support :GUI ---> one Common Language Commands Based on Linux Kerenel 
+	--------------------------------------------------
+why Different Distrubition ? 
+	1- Different GUI (OS Based On Linux --> Puzzel ) 
+	2- Default Applicat  & Package Manager 
+	package manage-->tool-->install & update & Remove & upgrade Application & Library 
+	python ---> install library --> pip install libraryName 
+	NodeJS ---> install library --> npm install libraryName
+	Linux 
+	   1- Debian Family ---> Package --> .deb 
+		apt install package or apt-get ......... or dpkg install ......
+	   2- RedHat Family ---> package rpm 
+	   	rpm install or yum install 
+	   	
+	   3- Arch-Linux  --> pacman
+	   4- SUSE Linux distributions -->Zypp 
+	   
+	   Keli ---> Hacking ---> all Network Management Application 
+	   ubunut ---> Developer 
+	   Redhat ---> Server 
+	-------------------------------
+3-  GUI ---> damage Memory & CPU 
+    save Resource ---> Server 
+	-------------------------------
+4-  Secure & Remote  Access [TeamViewer ,anyDesk]
+    ssh  Protcol ---> Connect (Access) Servers 
+    developer ---- ssh ----> Github
+	-------------------------------
+5- falling in Love 
+----------------------------------------------------------------------------------------
+Command option Argument 
+option   ---> fixed [inside Command]--> Default Behaviour Command   
+Argument ---> Generic --> Any Input --> input Command 
+
+uname -a
+
+cal 2005
+----------------------------------------------------------------------------------------
+Information on Command (Manual Page )
+--------------------------
+man uname  --> Recommend 
+info uname 
+uname --help  or uname -h
+----------------------------------------------------------------------------------------
+whereis uname   ===> path Command + path Manual (man)
+uname: /usr/bin/uname /usr/share/man/man2/uname.2.gz /usr/share/man/man1/uname.1.gz
+----------------------------------------------------------------------------------------
+Directories (Linux)===> Folder (windows)
+--------------------------------------------------------------------------
+mount ---> appeare --->External Flash , External Device(HardDisk) ,Internal Hard  
+	==============
+ls -l ~/Music
+total 20
+drwxrwxr-x 2 mina mina 4096 ديس 21 09:41 dir1
+drwxrwxr-x 2 mina mina 4096 ديس 21 09:42 dira
+drwxrwxr-x 2 mina mina 4096 ديس 21 09:42 dirb
+drwxrwxr-x 2 mina mina 4096 ديس 21 09:42 dirc
+drwxrwxr-x 2 mina mina 4096 ديس 21 09:42 dird
+-rw-rw-r-- 1 mina mina    0 ديس 21 09:39 file
+		==============
+ls -ld ~/Music
+drwxrwxr-x 7 mina mina 24576 ديس 21 09:42 /home/mina/Music
+		==============
+ls -l ~/Music/file 
+-rw-rw-r-- 1 mina mina 0 ديس 21 09:39 /home/mina/Music/file
+
+sudo apt install csvkit
+cat /etc/passwd | csvlook
+                ==============
+                
+where i'm ---> pwd 
+Who i'm ---> whoami
+change directory --> cd path
+what 's inside Directory --> ls path
+what 's inside File --> cat path or more path or less path or head path or tail path 
+what 's inside Directory --> ls path
+
+
+mina@mina-G5-5500:~/Music$ ls
+dir1  file1   file15  file20  file8  filee
+dir2  file10  file16  file3   file9
+dir3  file11  file17  file4   filea
+dir4  file12  file18  file5   fileb
+dir5  file13  file19  file6   filec
+file  file14  file2   file7   filed
+
+mina@mina-G5-5500:~/Music$ ls file*
+file    file13  file18  file4  file9  filee
+file1   file14  file19  file5  filea
+file10  file15  file2   file6  fileb
+file11  file16  file20  file7  filec
+file12  file17  file3   file8  filed
+mina@mina-G5-5500:~/Music$ ls *2
+file12  file2
+dir2:
+
+mina@mina-G5-5500:~/Music$ ls ~/Music/*2
+/home/mina/Music/file12
+/home/mina/Music/file2
+
+ls ~/Music/file?
+/home/mina/Music/file1  /home/mina/Music/file8
+/home/mina/Music/file2  /home/mina/Music/file9
+/home/mina/Music/file3  /home/mina/Music/filea
+/home/mina/Music/file4  /home/mina/Music/fileb
+/home/mina/Music/file5  /home/mina/Music/filec
+/home/mina/Music/file6  /home/mina/Music/filed
+/home/mina/Music/file7  /home/mina/Music/filee
+
+ls ~/Music/file??
+/home/mina/Music/file10  /home/mina/Music/file16
+/home/mina/Music/file11  /home/mina/Music/file17
+/home/mina/Music/file12  /home/mina/Music/file18
+/home/mina/Music/file13  /home/mina/Music/file19
+/home/mina/Music/file14  /home/mina/Music/file20
+/home/mina/Music/file15
+
+
+mina@mina-G5-5500:~/Music$ ls ~/Music/file[0-9]
+/home/mina/Music/file1  /home/mina/Music/file6
+/home/mina/Music/file2  /home/mina/Music/file7
+/home/mina/Music/file3  /home/mina/Music/file8
+/home/mina/Music/file4  /home/mina/Music/file9
+/home/mina/Music/file5
+
+ls ~/Music/file[19]
+/home/mina/Music/file1  /home/mina/Music/file9
+
+	--------------
+mina@mina-G5-5500:~/Music$ man man 
+	---------------
+mina@mina-G5-5500:~/Music$ man -s 5 passwd 
+	---------------
+man -a passwd --> all Manual Page Passwd (all Section)
+	----------------
+Search Man 
+passwd ---> How many Repeate 
+
+man -f passwd
+whatis passwd
+	passwd (5)           - the password file
+	passwd (1ssl)        - OpenSSL application commands
+	passwd (1)           - change user password
+
+man -f mkdir
+	mkdir (2)            - create a directory
+	mkdir (1)            - make directories
+		=================================================
+man -k keyword ---> Search any CommandName or Describtion contain keyword  
+man -k directory
+man -k pass 
+		=================================================
+man -f pass ==> Search Exactly Comman Name only (Not contain)
+========================================================================================
+				VI Editor 
+			    ===================
+Create File , Display File 
+Open & Edit File , Create File With Data  ==> vi 
+===========================================
+vi ==> tools for Editing File (Notepad on Terminal ) 
+vim ==> Imporved Vi Editor 
+vi --> not Support arrows , backspace , ...............
+sudo apt install vim
+====================================================================================
+vi ===> Command Mode == i,I,A,a,o,O ==> insertMode (write)
+           ||        <==ESC==
+            :
+           ||
+        Command Line Mode
+========================================================================================
+vi ~/Music/file
+========================================================================================
+list all Shells on system:-
+	cat /etc/shells  
+Display value of Variable :- 
+	echo $variablename 
+Enviroment Variabls in shells :-
+	1- list all Enviroment Variabls login Shell :
+		printenv or env 
+	2- list all Enviroment Variabls Specific Shells (Bash) :
+		man bash ===> Search  Shell Variables
+========================================================================================
+Example on Enviroment Variablse :-
+	echo $HOME 
+	echo $HOSTNAME 
+	echo $USER
+	echo $PATH
+	echo $SHELL 
+	echo $PS1
+	echo $PS2
+========================================================================================
+PATH 
+========================================================================================
+					PS1
+				====================
+mina@mina-G5-5500:~/Music$ ==> Prompot 
+Prompot ==> userlogin @ hostname : Working Directory $
+PS1="\u @ \t : \W $"
+mina @ 13:11:42 : Music $
+========================================================================================
+					PS2
+				====================
+echo mina\                        \===> PS2 ===> >
+> marco
+minamarco
+			        ====================
+PS2=">>>>>"
+echo mina\
+>>>>>marco
+minamarco
+========================================================================================
+PS3 ===> Select 
+dbName>
+========================================================================================
+					PATH 
+				====================
+How Run Command using name not address ?
+===========================================
+/usr/bin/ls
+ls
+======================================================================================
+vi ~/Music/minacommand/com1 ===> echo "Ilove linux"
+sudo chmod +x ~/Music/minacommand/com1 ==> File as Command executable 
+~/Music/minacommand/com1
+I Love Linux and I hate Windows
+com1 ===> Error Can't Run Command using Name you must write address
+echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/mina/Documents/BashCommand/
+PATH=$PATH:/home/mina/Music/minacommand
+com1
+I Love Linux and I hate Windows
+
+======================================================================================
+which python3 ==> addreess Command
+/usr/bin/python3
+======================================================================================
+How Make alias for Command :-
+alias c="clear"
+alias o="ls"
+o ==> Run ls 
+unalias o
+o
+o: command not found
+		       ==========================
+Type Command ? 
+	builtin Commad --> Shell
+	External Command 
+	alias
+			==========================
+type command
+
+type for
+for is a shell keyword
+
+type cat
+cat is /usr/bin/cat
+
+type c
+c is aliased to `clear'
+
+=======================================================================================
+				Terminal(Bash Shell)
+		              Startup & Initalization files     
+			    ======================================             
+PTS(Gui Termainal No login Shell)            TTY(Serve Login Shell)
+======================================================================================	
+tty					     tty 
+/dev/pts/0					/dev/tty1
+=======================================================================================	
+Startup files 2 File                         Startup files   4 Files 
+=======================================================================================	
+ /etc/bash.bashrc				/etc/profile
+ ~/.bashrc                                      ~/.profile
+ 						/etc/bash.bashrc
+ 					      	~/.bashrc
+=======================================================================================
+.bash_history  ==> history Command close Terminal
+
+history ---> Buffer Data + .bash_history
+=======================================================================================
+mina@mina-G5-5500:~$ tail -1 /etc/shadow 
+tail: cannot open '/etc/shadow' for reading: Permission denied
+mina@mina-G5-5500:~$ sudo !!
+=======================================================================================
+
+
+
+
+
+ 
+
+
+
+
+
+

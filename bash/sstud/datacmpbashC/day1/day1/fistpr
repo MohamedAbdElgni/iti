@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+echo "hello from first proj --> 1"
+echo "hello from first proj --> 2"

@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+todday="the date is `date`. "
+echo $todday
+echo "=================================================="
+echo "25+35"|bc
+dogname="belly"
+dogage="3"
+yearf="5"
+echo "=================================================="
+echo "my dog name is ==>$dogname and it is $dogage years old." 
+echo "=================================================="
+echo "and after 5 years it will be $(echo "$yearf+$dogage"|bc) years"
