@@ -1,0 +1,336 @@
+Users & group Linux 
+
+Every user has id , Primary Group (gid) [may be has secondary group]
+				============================  
+Type of Users :- 
+=======================
+	root - Admin ---> id =0  
+	Service User ---> users ---> Start & Stop (Service) --> id(1 - 999)  
+		mina ---> http ---> Webserver <---- Hacker (mina)
+		mina ---> http(user)--> start Service (webserver) <----Hacker (http) 
+	Normal User id(1000)
+		nosuderos , Suderos
+
+Normal User (suderos) ---> Secondary Group (sudo (ubuntu) or wheel (Redhat))
+==========================================================================================
+ls -l ~/Music/
+total 8
+-rw-rw-r-- 1 mina mina  350 ديس 21 12:20 file
+type-Permission-nolink-Owneruser-OwnerGroup-Size-modification time
+==========================================================================================
+Important Files :- 
+=======================
+cat /etc/passwd 
+loginname:x(password):id:gid:Comment:Home:shell
+			--------------------------------
+cat /etc/group
+sudo:x:27:mina,mina3
+groupname:x:gid:memebergroup
+			--------------------------------
+sudo cat /etc/shadow 
+username:encrypted passwd:last changed:min:max:warn:inactive:expire:future-use
+			--------------------------------
+sudo cat /etc/gshadow 
+==========================================================================================
+Create user ----> useradd 
+
+How Default useradd Command (change Default)
+	useradd -D
+		----------------------------------
+How create user ? 
+1- name ---> Argument 
+2- id  --> generate Automatic  (-u )
+3- primary group  --> generate Automatic ( -g ) 
+4- Home (-m) or (-md /home/ali)
+5- Shell (-s /usr/bin/bash)
+6- Comment (Full Name descripition) (-c Comment )
+7- passwd (-p "Encrtyped passwd") not Recommend
+8- SecondaryGroup (-G group)
+		----------------------------------
+useradd ayman -s /usr/bin/bash -c "Python-ITI" -G mina -m
+
+mina@mina-G5-5500:~$ sudo useradd ayman -s /usr/bin/bash -c "Python ITI" -m 
+mina@mina-G5-5500:~$ id ayman 
+uid=1001(ayman) gid=1001(ayman) groups=1001(ayman)
+mina@mina-G5-5500:~$ tail -1 /etc/passwd
+ayman:x:1001:1001:Python ITI:/home/ayman:/usr/bin/bash
+mina@mina-G5-5500:~$ tail -1 /etc/group
+ayman:x:1001:
+
+sudo passwd ayman 
+
+=========================================================================================
+How check user ?
+================== 
+id username
+tail -1 /etc/passwd
+tail -1 /etc/group 
+=========================================================================================
+information current
+====================== 
+id 
+whoami 
+cat /etc/passwd 
+========================================================================================== 
+Switch Users 
+==========================
+su ayman ===> Switch user without clear all Enviroment Variable
+
+exit ===> logout
+su - ayman ===> Switch user with clear all Enviroment Variable
+
+mina@mina-G5-5500:~$ pwd
+/home/mina
+mina@mina-G5-5500:~$ su - ayman 
+Password: 
+hate Windows /etc/bash.bashrc
+ayman@mina-G5-5500:~$ pwd 
+/home/ayman
+			--------------------------------------------
+How to switch root 
+============================
+1- using root password 
+	su or su - or su root or su - root 
+		--------------------------------------------
+2- using sudo passwd 
+	sudo -i 
+		--------------------------------------------
+how change root passwd 
+	sudo passwd root 
+==========================================================================================
+sudo ===> root 
+	     =============================
+Server :- 
+==========
+Adminstation ===> useradd , usermod ====> can't userdel 
+==========================================================================================
+How Modify User ?
+==============================
+usermod  
+username -l 
+shell  -s 
+comment -c 
+........
+userlocked -L 
+userunlocked -U
+Secondary (Overwrite) -G 
+Secondary (append) -aG 
+==========================================================================================
+mina@mina-G5-5500:~$ su ayman 
+ayman@mina-G5-5500:/home/mina$ sudo tail /etc/shadow
+[sudo] password for ayman: 
+ayman is not in the sudoers file.  This incident will be reported.
+ayman@mina-G5-5500:/home/mina$ exit
+exit
+mina@mina-G5-5500:~$ sudo usermod ayman -aG sudo  
+mina@mina-G5-5500:~$ su ayman 
+ayman@mina-G5-5500:/home/mina$ sudo tail /etc/shadow
+==========================================================================================
+mina@mina-G5-5500:~$ sudo usermod ayman -L   ==> Lock 
+mina@mina-G5-5500:~$ su ayman 
+Password: 
+su: Authentication failure
+mina@mina-G5-5500:~$ sudo usermod ayman -U ==> UnLock
+mina@mina-G5-5500:~$ su ayman  
+==========================================================================================
+mina@mina-G5-5500:~$ sudo chage -M 30 ayman ==> Change Password Expire
+mina@mina-G5-5500:~$ sudo chage -l ayman  ===> Check Password Agianing 
+mina@mina-G5-5500:~$ sudo chage -E "2025-02-02" ayman ==> Change Account Expire 
+mina@mina-G5-5500:~$ sudo chage -l ayman ===> Check Password Agianing 
+==========================================================================================
+mina@mina-G5-5500:~$ ls /etc/skel 
+testing
+mina@mina-G5-5500:~$ su ayman 
+ayman@mina-G5-5500:/home/mina$ ls /home/ayman
+testing
+==========================================================================================
+How add group ? 
+========================
+groupadd -g 3500 python 
+-g ---> id 
+		=================================================	
+-r ---> out of Range users
+groupadd python ---> ( 1002 )
+useradd ali --> id 1002   gid 1003
+groupadd -r python  (out of Range users)
+		=================================================
+How to modify group ? 
+========================
+groupmod -g ?? name 
+groupmod -n ?? name 
+========================================================================================
+who  or  w ------->  All user login Now 
+==========================================================================================
+Ownership :- (owner user , Owner group)
+============================================
+Display Owner user , Owner Group for file 
+ls -l path_file 
+			------------
+Display Owner user , Owner Group for directory
+ls -ld path_ directory	
+			---------------
+How Change owner User :- 
+chown user pathfile/dir
+			---------------
+How Change owner Group :- 
+===========================
+chown :group pathfile/dir
+chgrp groupname pathfile/dir
+man -f chg
+chgrp (1)            - change group ownership
+			---------------
+How Change owner User&Group :- 
+===========================
+chwon user:group pathfile/dir
+			========================================
+mina@mina-G5-5500:~$ ls -l ~/Music/
+total 8
+-rw-rw-r-- 1 mina mina  350 ديس 21 12:20 file
+
+mina@mina-G5-5500:~$ sudo chown :ayman ~/Music/file 
+mina@mina-G5-5500:~$ ls -l ~/Music/
+total 8
+-rw-rw-r-- 1 mina ayman  350 ديس 21 12:20 file
+
+mina@mina-G5-5500:~$ sudo chown ayman ~/Music/file 
+mina@mina-G5-5500:~$ ls -l ~/Music/
+total 8
+-rw-rw-r-- 1 ayman ayman  350 ديس 21 12:20 file
+mina@mina-G5-5500:~$ sudo chown mina:mina ~/Music/file 
+mina@mina-G5-5500:~$ ls -l ~/Music/
+total 8
+-rw-rw-r-- 1 mina mina  350 ديس 21 12:20 file
+==========================================================================================
+Permission
+================
+user ----> == owner user ===> permission user 
+user ----> SecondaryGroup(member) ===> owner Group ===> group Permission 
+user ----> Not owner user , not member owner group ===> other Permission 
+---------------------------------------------------------------------------------
+                 file                                          directory
+r           cat ,head,tail,less , more                             ls 
+---------------------------------------------------------------------------------
+w           Edit file                                             Edit Directory 
+	    (vi ---> interactive --> read before write)		  (Create)touch , 
+	    inteactive --> rw or (overwite :wq!)		   Rename(mv)
+	    no iteractive ---> w 				   delete(rm)
+---------------------------------------------------------------------------------	    
+x            Run File                                              cd 
+	     chmod +x filepath (Executable)                     rx --> ls -l 
+==========================================================================================
+mina@mina-G5-5500:~$ sudo chmod u-r ~/Music/file 
+mina@mina-G5-5500:~$ cat ~/Music/file
+cat: /home/mina/Music/file: Permission denied
+mina@mina-G5-5500:~$ ls -l ~/Music/
+total 8
+--w-rw-r-- 1 mina mina  350 ديس 21 12:20 file
+==========================================================================================
+How change Permission :-
+================================= 
+1- symbolic :- 
+===================
+u  , g , o  , a , -(remove Permission) , +(add Permission) , =(overwrite permission)  , r, w,x 
+
+ls -l ~/Music/file 
+-  rwx     r--     -w-
+  user     group    other 
+user=r   group=rw   other=
+
+sudo chmod u-wx,g+w,o-w ~/Music/file 
+or 
+sudo chmod u=r,g=rw,o= ~/Music/file 
+			-----------------------------------
+Add all Execute 
+-------------------
+sudo chmod a+x ~/Music/file  or sudo chmod u+x,g+x,o+x ~/Music/file
+ 			-----------------------------------
+sudo chmod u+rw ~/Music/file
+	====================================================================
+
+1- Numeric :- 
+===================
+r w x
+4 2 1
+==========
+user=rw , group=w, other = ---   ==Covert==> user=rwx , group=rw, other = ---
+sudo chmod 760 ~/Music/file
+			======================================
+Max Manual Permission ===> 777
+==========================================================================================
+main:ls -ld ~ 
+drwx------ 
+ayman: cd   /home/mina -->not valid
+		---------------------
+main:chmod o+x ~
+main:ls -ld ~ 
+drwx-----x                           
+ayman: cd   /home/mina -->valid
+ayman: ls /home/mina -->not valid
+		---------------------
+main:chmod o+r ~
+
+main:ls -ld ~ 
+drwx---r-x                           
+ayman: cd   /home/mina -->valid
+ayman: ls /home/mina -->valid
+ayman: touch   /home/mina/ayman --> not valid
+		---------------------
+main:chmod o+w ~
+main:ls -ld ~ 
+drwx---rwx   
+ayman: cd   /home/mina -->valid
+ayman: ls /home/mina -->valid
+ayman: touch   /home/mina/ayman -->valid
+==========================================================================================
+mina@mina-G5-5500:~$ chmod u-r ~/Music/file 
+mina@mina-G5-5500:~$ ls -l ~/Music/file 
+--w-rw-r-- 1 mina mina 350 ديس 21 12:20 /home/mina/Music/file
+mina@mina-G5-5500:~$ vi ~/Music/file 
+mina@mina-G5-5500:~$ chmod u+r ~/Music/file 
+mina@mina-G5-5500:~$ cat ~/Music/file 
+mina Nagy OVerwrite
+mina@mina-G5-5500:~$ chmod u-r ~/Music/file 
+mina@mina-G5-5500:~$ echo "hello mina2"
+hello mina2
+mina@mina-G5-5500:~$ echo "hello mina2" >> ~/Music/file 
+mina@mina-G5-5500:~$ chmod u+r ~/Music/file 
+mina@mina-G5-5500:~$ cat ~/Music/file 
+mina Nagy OVerwrite
+hello mina2
+=========================================================================================
+Default Permission 
+=====================
+umask -S ===> display Default
+			---------------------------
+umask -S u=rwx,g=rwx,o=rx  ===> Change Default
+
+002   ===> umask = 7-sum(rwx)
+Notes :: file Don't take Execute Permission by Default 
+=========================================================================================
+Minmum Permission 
+=========================
+                        File                Source               Target 
+Copy                    r--                  --x                  -wx
+Move                    ---                  -wx                  -wx
+=======================================================================================
+                          File                parent              
+Delete                    ---                  -wx                 
+Rename                    ---                  -wx 
+=======================================================================================
+Edit                     -w-
+cat                      r--
+ls                       r--
+cd                       --x
+run                      r-x  or --x 
+=======================================================================================
+
+
+
+
+
+
+
+
+
+
+

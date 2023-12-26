@@ -1,0 +1,137 @@
+Inode  
+	Soft Link
+	hard link 
+Comperssion 
+Archiving 
+package Manager  
+			----------------------------
+Seach on Files :- 
+---------------
+* Name
+ls -aR / 2> /dev/null | grep 'etc'
+find path -name '' 
+find path -iname '' ==> ignore Case Senstive 
+find / -name 'etc' 2> /dev/null
+	----------------------
+* type 
+find /home/mina/bin -type d
+	----------------------
+* perm
+find /home/mina/bin -perm 771
+	----------------------
+* size
+find / -size +10M 2> /dev/null 
+	----------------------	
+* user
+find /home/mina -user nehad 2> /dev/null
+* name
+find /home/mina -name "etc" 2> /dev/null
+---------------------------------------------------------
+- file ==> some data Stored in Memory 
+- inode ==> internal os DataStructure contains 
+  Specific Information about the File (Size - 
+  Permissions -TimeStamp -Owner -Group...etc)
+-inode ==> provides a pointer to the to disk blocks
+           contains file data
+		----------------------
+Notes : fileName not Stored at inode
+FileName Stored ==> Directory Entry (Dentry)
+Dentry=NameFile+Inode
+		----------------------
+ls -i fileName 
+find / -inum 35377789 2>/dev/null
+		----------------------
+Hard Linking (two or more file with the Same Inode)
+deleing ?if original file or any hard linking file deleted 
+the other will be valid . 
+------------------------------------------------------------------------
+Characteristicc : 
+- Not Effect size ==> Same inode
+- HardLink Not working on directoy [you must use Hard linking with tar ]
+- Same Parition 
+------------------------------------------------------------------------------------------ 
+
+Soft Linking [Symbolic ](File Pointing to another file like shortcut in windows)
+deleing ?if original file will become broken.
+
+ln -s ~/file ~/Desktop/soft_file
+
+- different inod 
+- SoftLink working on directoy & file 
+- different Parition 
+-------------------------------------------------------------------------------------------
+Comperssion 
+---------------
+Notes :- 
+du -sh fileName or ls -lh fileName==> to view fileSize
+
+$ gzip file	
+$ ls -lh file.gz or  du -sh file.gz ===> -rw-rw----. 1 mina mina 651K May 26 12:27 file.gz
+$ gunzip file.gz
+					-----------
+$ bzip2 file
+$ ls -lh file.bz2  or  du -sh file.bz2 ==> -rw-rw----. 1 mina mina 563K May 26 12:27 file.bz2
+$ bunzip2 file.bz2
+					------------
+$compress file
+$ ls -lh file.Z
+$uncompress file.Z
+					------------
+$zip myfile.zip file [Notes:-  -m ==> Deletes the original files after zipping.]
+$unzip myfile.zip
+bzip2 ==> more Comperssion , Slow 
+gzip ==> less Comperssion , Fast 
+
+-----------------------------
+Archiving 
+-----------
+How to create,
+
+1-a) create tar Files :
+-------------------
+tar cvf  [name.tar] [folderpath]
+tar cvf mina.tar test/
+	----------------------
+1-b)How Check Size of Files 
+-----------------------------
+du -sh name.tar    or ls -lh name.tar
+	----------------------
+$ tar cvf backup.tar dir1
+$ du -sh backup.tar ===> 27M	backup.tar
+------------------------------------------------------------------
+2) Display Content of tar files -t 
+----------------------------------
+$ tar tvf backup.tar
+-------------------------------------------------------------------
+4) compress tar files
+----------------------
+4-a) USing gzip & bzip2
+------------------------
+$ gzip backup.tar 
+$ du -sh backup.tar.gz ===> 3.2M	backup.tar.gz
+$ gunzip backup.tar.gz
+		--------------------
+4-b) Bulid In Command tar with Compress in same Command
+tar czvf backup.tar.gz dir1
+du -sh backup.tar.gz   ========> 3.2M	backup.tar.gz
+		--------------------
+tar cjvf backup.tar.bz2 dir1
+du -sh backup.tar.gz =========> 2.8M	backup.tar.gz
+		--------------------
+5) Extract tar & decompress
+tar xzvf backup.tar.gz
+tar xjvf backup.tar.bz2
+Notes : -z gzip   -j bzip2
+============================================================================
+Package Manager  tool install , update ,remove , upgrade App Library
+
+apt-get install app 
+
+============================================================================
+Self Study  [Screen Shout With Applying On Terminal] 
+------------------------------------------------------
+Yum  ==> redhat           rpm  vs yum
+apt-get ==> ubuntu        dpkg vs apt
+============================================================================
+ 
+

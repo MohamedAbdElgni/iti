@@ -1,0 +1,270 @@
+Process 
+=============
+App in Running 
+Example :- 
+  terminal (Shell)
+  Command 
+  App 
+============================================================================
+Every Process has ID (PID), Parent ID (PPID)
+
+current Process ID current shell 
+echo $$
+
+Process Current Terminal 
+===========================
+ps  ---> Process Status 
+============================================================================
+ps -u mina --> all Process mina user (Specific user )
+ps aux --> all Process all user 
+ps -ef --> all Process all user  with parent ID 
+pstree
+top ---> display all Infor all Process Dynamic (in Live) + Priority 
+============================================================================
+firefox ---> Forground (Terminal Holding)
+Terminate(close)--> Cntrl + C 
+			--------------------------
+firefox & ---> Background (Terminal Not Holding)
+			---------------------------		
+jobs   ===>JobID +Status + all Process Background Current Terminal
+[1]+  Running                 firefox &
+			---------------------------
+Terminate(close) Background+Cureent Terminal--> kill %1 
+			---------------------------
+firefox(Forground)--->Stop(cntrl+z)-->jobs-->bg %JOBID
+firefox(Background)-->jobs-->fg %JOBID
+			---------------------------
+sleep 100 ---> Command Take Time ---> Background
+			--------------------------- 
+kill --> Send any Signal for Process 
+kill --> By Default Send Terminate Signal 
+
+Terminate(CLose)& kill(Force Close) & Stop & continue 
+
+ kill -l  ---> information about all Signal 
+ 18) SIGCONT	19) SIGSTOP 15) SIGTERM   9) SIGKILL
+ 			---------------------------
+kill -19 %jobID   or kill -SIGSTOP %jobID 
+kill -18 %jobID   or kill -SIGCONT %jobID 
+kill -9 %jobID    or kill -SIGKILL %jobID 
+kill -15 %jobID   or kill -SIGTERM %jobID or kill %jobID
+			---------------------------
+kill -19 ProcessID   or kill -SIGSTOP ProcessID
+kill -18 ProcessID   or kill -SIGCONT ProcessID
+kill -9 ProcessID    or kill -SIGKILL ProcessID 
+kill -15 ProcessID   or kill -SIGTERM ProcessID or kill ProcessID
+====================================================================================
+How Know Process ID ??(Search Process)
+pgrep ProcessName
+		==============================
+pgrep -al firefox 
+6926 /usr/lib/firefox/firefox
+7112 firefox
+		==============================
+kill -SIGTERM 6926
+pgrep -al firefox
+		==============================
+pkill -SIGTERM sleep ==> Terminate Process using Name  
+		==============================
+pgrep -lu mina ==> all Process match user
+pgrep -lv mina ==> all Process unmatch user
+mina@mina-G5-5500:~$ pgrep -l system  ===> Search Contains 
+1 systemd
+316 systemd-journal
+374 systemd-udevd
+mina@mina-G5-5500:~$ pgrep -x system   ===> -x Exact 
+		==============================
+Niceness values range from -20 to +19  
+-20 --> highest Priority
+nice -n 5 sleep 30000 &
+		==============================
+renice -n 15 -p 8411
+8411 (process ID) old priority 5, new priority 15
+		==============================
+renice -n 0 -p 8411
+renice: failed to set priority for 8411 (process ID): Permission denied
+		==============================
+sudo renice -n 0 -p 8411
+[sudo] password for mina: 
+8411 (process ID) old priority 15, new priority 
+============================================================================
+Scheduling 
+============
+Process 1 , Process2  ==== Scheduler ===> CPU(one Core)==>
+============================================================================
+Redirection  (Change Default Ouptut ,Default Error,Default Inputs )
+====================================================================
+Default Ouptut ==> Screen  ==> file ( 1> or > or 1>> or >>)
+Default Error  ==> Screen  ==> file  ( 2> or 2>>)
+Default Input  <== keyboard <==file  (0< , <)
+
+command 1> file or command >file ===> (Ouptut(overwrite)-->File) 
+
+ls -l  1> ~/Music/output or ls -l  > ~/Music/output
+
+date  1> ~/Music/output or  date  > ~/Music/output ==>  overwrite
+
+cat ~/Music/output
+
+date  >> ~/Music/output==>date  1>> ~/Music/output ==> Append
+		=====================================
+cat ~/Music/output
+		====================================
+ls -R /etc  2> ~/Music/error
+cat ~/Music/error 
+ls: cannot open directory '/etc/cups/ssl': Permission denied
+ls: cannot open directory '/etc/polkit-1/localauthority': Permission denied
+ls: cannot open directory '/etc/ssl/private': Permission denied
+		===================================
+ls -R /etc  2> ~/Music/error > ~/Music/output 
+XXXXXXXls -R /etc 1&2> ~/Music/data (Error+Output ==>data file) ==> not Correct Please Search itXXXXX
+	        ===================================
+cat < /etc/passwd ====> cat /etc/passwd 
+	        =================================
+tail -1 < /etc/passwd
+ayman:x:1001:1001:Python ITI:/home/ayman:/usr/bin/bash
+
+tail -1 0< /etc/passwd
+ayman:x:1001:1001:Python ITI:/home/ayman:/usr/bin/bash
+
+tail -1  /etc/passwd
+ayman:x:1001:1001:Python ITI:/home/ayman:/usr/bin/bash
+
+cat without inputfile 
+========================
+cat > ~/Music/output   #==>Create File With Data without read Permission  
+mina nagy 
+I Love Linux and I hate Windows .
+I Love Python Benisuef
+Cntrl + D ===> Save and Exit 
+========================================================================================
+Pipeline take O/p Command 1 as Input COmmand2 
+
+  Command1 Output -- | --> Command2 -- | --> Command3 -- | --> Command 4
+	======================================================================
+dipaly 5 to 10  usinig Head and tail  
+==========================================
+head -10 /etc/passwd | tail -6 
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+s
+head -10 /etc/passwd | tail -6  | sort 
+
+
+========================================================================================
+Count number of line & Words & character 
+=============================================
+wc /etc/passwd
+	51   94 3088 /etc/passwd
+	
+wc -l  /etc/passwd ===> Count no of line 
+Count User ===> Count lines /etc/passwd ==> wc -l /etc/passwd 
+wc -w  /etc/passwd ===> Count no of word
+wc -c  /etc/passwd ===> Count no of char
+
+count user login on machine 
+========================================================================================
+Search file System 
+=========================
+	find path options 
+	find / -name "etc"
+find  / -name  ".bashrc" 2> ~/Music/error
+find  / -name  ".bashrc" 2> /dev/null
+find / -name "mina" -type d 2>/dev/null
+find / -name mina -type f 2>/dev/null
+find / -size +5G 2>/dev/null
+-prem , -time .......
+
+
+ls -aR / 2>dev/null | grep .bashrc
+ls -aR / 2>/dev/null | grep ^.bashrc | wc -l 
+========================================================================================
+Search & cutting & counting file  
+============================================================================
+Search File  Data  (get Rows):- 
+=====================================
+grep root /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+nm-openvpn:x:121:127:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+
+grep ^root /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+
+grep ^g /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+
+grep bash$ /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+mina:x:1000:1000:mina,,,:/home/mina:/bin/bash
+ayman:x:1001:1001:Python ITI:/home/ayman:/usr/bin/bash
+
+
+grep ROOT /etc/passwd
+grep -i ROOT /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+nm-openvpn:x:121:127:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+
+
+grep -v ^g /etc/passwd ==> -v unmatched 
+
+
+====================================================================================
+Cuting (get Columns)
+====================
+cut -d : -f 1 /etc/passwd  ==> display col 
+cut -d : -f 1,7 /etc/passwd  ==> display col 1 , 7 
+cut -d : -f 3-5 /etc/passwd  ==> display from col 3 to 5 
+
+cut -d : -f 1,7 /etc/passwd | grep ^g | grep false$
+gnome-initial-setup:/bin/false
+gdm:/bin/false
+====================================================================================
+Sort 
+====================
+sort -t : -k3 -n -r /etc/passwd | head -1
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+
+-t ==> field-separator
+-k ==> no of col 
+-n ===> sort number
+-r ==> revese 
+====================================================================================
+sort -t : -k3 -n -r /etc/passwd | head -1 | cut -d : -f 1,7
+nobody:/usr/sbin/nologin
+====================================================================================
+sort -t : -k3 -n -r /etc/passwd | head -1 | cut -d : -f 1,7 > ~/Music/file
+====================================================================================
+grep ^g /etc/passwd | tee ~/Music/output 
+tee --> Save Output File + Display output on Screen 
+====================================================================================
+echo "hello" | tr 'a-z' 'A-Z'
+HELLO
+echo "hello" | tr 'l' '&'
+he&&o
+====================================================================================
+cp /etc/passwd ~/Music/newpasswd
+diff ~/Music/newpasswd /etc/passwd 
+			======================
+vi ~/Music/newpasswd 
+diff ~/Music/newpasswd /etc/passwd 
+0a1
+> root:x:0:0:root:/root:/bin/bash
+vi ~/Music/newpasswd 
+			=======================
+cp /etc/passwd ~/Music/newpasswd
+vi ~/Music/newpasswd 
+			=======================
+diff ~/Music/newpasswd /etc/passwd 
+1d0
+< mmmmmmm
+====================================================================================
+
+
+
+
+ 
+
