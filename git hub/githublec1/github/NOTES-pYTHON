@@ -1,0 +1,333 @@
+Local Version Control
+=========================
+can work offline 
+            ------------------------------------------
+Centeral Version Control 
+============================
+person1 <--pull,update--> Server <---pull,update--->Person2
+
+1- interact [Central Repo ]
+2- Client-Server model --> Version Control (Connect Server)
+3- History Tracking ()
+4- Simple 
+---------------------------------------------------------
+disadvantage 
+==============
+1- Single Point Faliure : can't make any Version Control Operation 
+            =====================
+2- Limited Capbility 
+   Can't work offline 
+            =====================
+3- Slower Operation : Branching , merge 
+==========================================================
+DVC [Distrubited Version Control]:- 
+=====================================
+
+                     server 
+Developer1(local)                Developer2(local)
+file1 
+file2
+clone (download)
+                    ---------------
+Can work offline then sync sever 
+----------------------------------------------------------
+(Git) local + online (gitlab - github -...........) 
+----------------------------------------------------------
+Developer --- ClI ----> Git(APP)
+user --- GUI ----> Git(APP)
+----------------------------------------------------------
+Challenge ?
+    1- Tracking Everthing 
+       Content,(Rename,type,permission)
+    
+    2- Protobale (OS independent)
+    
+    3- Unieque ID --> Git Object ??
+
+    4- Tracking History --> all logs     
+
+============================================
+How Install Git 
+========================
+git --version
+sudo apt update
+sudo apt install git
+  #unmet dependencies 
+    sudo apt --fix-broken install 
+    sudo apt install git
+    git --version 
+================================================
+git config --global user.name "yourname"
+git config --global user.email "email"
+git config --list 
+
+local --> one Repo  
+--global ---> user login --> ~/.gitconfig
+--system ---> All user  -->/etc/gitconfig
+================================================
+0) git init
+~/test_git$ ls -a 
+.  ..  .git
+
+1) Create File 
+vi file 
+find .git/objects/ -type f  ==> Empty 
+
+2) git status
+file ---> Untracked files:
+git status -s
+?? file
+
+3) staging Working Dir --->Stage(index)
+git add * 
+#git add file 
+#git add *.txt 
+#git add file1
+        ===================================
+git status
+ On branch master
+ No commits yet
+ Changes to be committed:
+     (use "git rm --cached <file>..." to unstage)
+	 new file:   file
+        ==================================
+git status -s 
+A  file
+        ==================================
+git rm --cached file  ===> file ==> untracked
+git add *  ==> #file ==> Stage 
+        =================================
+list what 's inside stages 
+==========================
+git ls-files
+file
+git ls-files -s 
+100644 08fe2720d8e3fe3a5f81fbb289bc4c7a522f13da 0	file
+        ===================================
+list what 's inside Repo 
+==========================
+find .git/objects -type f
+.git/objects/08/fe2720d8e3fe3a5f81fbb289bc4c7a522f13da
+        ===================================
+git cat-file -t 08fe2720d8e3fe3a5f81fbb289bc4c7a522f13da
+blob
+git cat-file -p 08fe2720d8e3fe3a5f81fbb289bc4c7a522f13da
+
+git cat-file -t 08fe2720d8e3fe3a5f81fbb289bc4c7a522f13da
+        ===================================
+git commit -m "inital commit"
+[master (root-commit) 383b826] inital commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file
+        ===================================
+find .git/objects -type f
+.git/objects/38/3b8260d6c2dd494242f825830710af5f167802
+.git/objects/7e/09aa0f9f64dc958de93e62a27bb3ce59b44fdd
+.git/objects/08/fe2720d8e3fe3a5f81fbb289bc4c7a522f13da
+        ===================================
+git log
+commit 383b8260d6c2dd494242f825830710af5f167802 (HEAD -> master)
+Author: minaITI <email@gmail.com>
+Date:   Tue Dec 26 13:50:53 2023 +0200
+    inital commit
+        ===================================
+git cat-file -p 383b8260d6c2dd494242f825830710af5f167802
+    tree 7e09aa0f9f64dc958de93e62a27bb3ce59b44fdd
+    author minaITI <github.iti2@gmail.com> 1703591453 +0200
+    committer minaITI <github.iti2@gmail.com> 1703591453 +0200
+
+    inital commit
+    =======================================
+vi file 
+    =======================================
+git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   file
+no changes added to commit (use "git add" and/or "git commit -a")
+
+git status -s 
+ M file
+modified red --> working dir != stage
+modified green --> stage != .gitRepo
+    ========================================
+modified (red)(unstage)--->modified (green)(uncommit) 
+git add *
+git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   file
+
+======================================================
+git object 
+blob --> files + metdata
+tree --> directory + metdata
+Commit object ===> Tracking History 
+    Author ---> name,email 
+    date 
+    message commit 
+    start Tree SHA-1 
+    Parent Commit SHA-1
+========================================================
+c1 <---c2 <---c3 <---c4  ===> Branch 
+(Bydefault master branch or main branch[linear] )
+First Commit --> without Parent --> root commit 
+========================================================
+c1 <---c2 <---c3 <---c4
+                      |
+                    head 
+if head ==C4 ==> Working Directory ===>C4
+
+c1 <---c2 <---c3 <---c4
+        |
+      head 
+
+if head ==C2 ==> Working Directory ===>C2
+=========================================================
+
+Summary 
+=========
+working dir --git add *--> Stage(index)--git commit  -m "Commit" --> .git Rep  
+                ===============================
+git status 
+    file untracked(Red) --> you must add to stage (git add) [working != stage != repo]
+     file(green) --> you must add to Repo (git commit) [working == stage != repo]
+    modified (Red) ---> you must add to stage (git add) [working != stage != repo]
+    modified (Green) ---> you must add to Repo (git commit) [working == stage != repo]
+    no commit --> no change (no action) [working == stage == repo] 
+                ================================
+git status -s 
+    ?? file(Red) --> you must add to stage (git add) 
+    file(green) --> you must add to Repo (git commit)
+    M (Red) file ---> you must add to stage (git add) 
+    M (Green) file ---> you must add to Repo (git commit)
+                =========================================
+git ls-files    ==> all object in stage
+git ls-files -s  ==> all object in stage with SHA-1 
+                ==========================================
+all objects in repo 
+find .git/objects -type f 
+                ==========================================
+display type git object 
+    git cat-file -t Id_object
+display size git object
+    git cat-file -s Id_object
+display content git object 
+    git cat-file -p Id_object
+                    ==========================================
+git log ==> commits
+git log --oneline ==> all commits
+                    ==========================================
+Commit      Commit                        Commit  
+  |           |                            tree
+ tree        tree                 tree                tree
+  |        |     |            blob1 blob2      blob1 blob2 blob3 blob4
+ blob    blob1  blob2      
+                    ==========================================
+c1 <---c2 <---c3 <---c4 ==> Branch (ByDefault Master or main )
+                    ==========================================
+c1 <---c2 <---c3 <---c4
+                      |
+                    head 
+if head ==C4 ==> Working Directory ===>C4
+
+c1 <---c2 <---c3 <---c4
+        |
+      head 
+if head ==C2 ==> Working Directory ===>C2
+                    ===========================================
+                       File  
+     ___________________|_____________________
+    |                                         |
+unTracked                                   Tracked
+                                         ______|______
+                                        |             |
+                                    Modified      unmodified
+
+==================================================================================
+git show ---> all Detalis last Commit 
+git show 383b826 ---> git show commit-SHA-Object ---> all Detalis Specific Commit 
+==================================================================================
+git diff ==> Compare working Directory VS Stage 
+git diff --staged  ==>Compare stage vs Repo
+==================================================================================
+Remove Local Repo 
+======================
+    rm -rf .git/
+==============================================================================
+git --version
+sudo apt update
+sudo apt install git
+  #unmet dependencies 
+    sudo apt --fix-broken install 
+    sudo apt install git
+    git --version 
+
+Setting Up Git 
+====================
+git config --global user.name "Your Name"
+git config --global user.email "youremail@domain.com"
+# Show 
+git config --list
+
+nano ~/.gitconfig
+            ~/.gitconfig contents
+[user]
+  name = Your Name
+  email = youremail@domain.com
+
+mkdir workspace
+cd workspace 
+git clone (url)
+ls  ==> Repo_name
+cd Repo_name
+ls ==> ReadME.md
+cat  ReadME.md
+touch file.py
+git status
+  #file.py==>untracked 
+git add file.py
+
+git status
+  # changes to be committed 
+
+git commit -m "first python code"
+
+git status 
+  # nothing to commit
+
+git push origin main 
+  #password github 
+  # Removed on 13 Agu 2021 
+setting-->developerSetting-->Personal token--> Classic --> Check All Scopes -->Copy token
+git remote set-url origin https://$token@github.com/$username_git/$repo_name
+Token https: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
+===============================================================
+** SSH ** 
+==========
+cd ~/.ssh
+            -------------
+ssh-keygen -t rsa -b 4096 -C "example@example.com"
+Enter file save key:keytest
+Enter passphrase:
+Enter samepassphrase:
+            -------------
+ls ~/.ssh
+keytest  keytest.pub
+            -------------
+eval $(ssh-agent -s)  #Run ssh agent
+            -------------
+ssh-add ~/.ssh/id_rsa
+  Identity added: /home/mina/.ssh/id_rsa (github.iti2@gmail.com)
+ssh-add -l 
+  4096 SHA256:8pH4XIaX50tqVx/ln0K2ReiJhIM1wlJ9St5mZteLkzE github.iti2@gmail.com (RSA)
+  
+ssh -T git@github.com
+============================================================================================
+copy data keytest.pub
+SSH and GPG keys -->  new ssh key
+Title ---> example@example.com
+key ---> Paste  
