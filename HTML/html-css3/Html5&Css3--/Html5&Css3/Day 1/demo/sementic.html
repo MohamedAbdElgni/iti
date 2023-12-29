@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            height: 100px;
+            background-color: brown;
+        }
+        
+        nav {
+            height: 50px;
+            background-color: blueviolet;
+        }
+        
+        section {
+            /* display: inline-block; */
+            float: left;
+            width: 75%;
+            height: 200px;
+            background-color: aqua;
+        }
+        
+        aside {
+            /* display: inline-block; */
+            float: right;
+            width: 25%;
+            height: 200px;
+            background-color: black;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        footer {
+            height: 100px;
+            background-color: rgb(73, 46, 46);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- <header>
+        this is header
+    </header>
+    <nav>
+        this is nav
+    </nav>
+    <section>
+        body
+    </section>
+    <aside>
+        this is side bar
+    </aside>
+    <div class="clear"></div>
+    <footer>
+        this is footer
+    </footer> -->
+
+    <!-- <meter value="2" min="1" max="10" low="3" high="7" optimum="8"></meter> -->
+    <progress id="progress" value="0" max="10"></progress>
+    <mark>web design</mark>
+    <p>Lorem, ipsum dolor sit amet consectetur <mark> elit. Explicabo impedit</mark> quod dolore? Dolorum dolor facere illo consequatur dignissimos, odio, nostrum dolores exercitationem sapiente ullam error ad laboriosam ex ducimus rerum!</p>
+
+    <span>jan,25 2011</span>
+    <time datetime="2011-01-25">jan,25 2011</time>
+    <script>
+        var progress = document.getElementById("progress")
+        var counter = 0;
+        var interval = setInterval(function() {
+            progress.value = ++counter;
+            console.log(counter);
+            if (counter >= 10)
+                clearInterval(interval)
+        }, 1000)
+    </script>
+</body>
+
+</html>
