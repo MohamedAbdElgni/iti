@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin-bottom: 20px;
+        }
+        
+        #fullname:invalid+span {
+            visibility: visible;
+        }
+        
+        #fullname:valid+span {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+        type varible data
+        24
+
+        int age=24
+        a=>href
+     -->
+    <!-- <a href="#">facebook</a> -->
+    <form>
+        <div>
+            <label for="fullname">full name</label> <input id="fullname" placeholder="enter your name" type="text" pattern="[a-zA-Z]{3,}" title="plz enter more than 3 char" name="fullname" required>
+
+            <span>please enter correct name</span>
+        </div>
+        <div>
+            <label>color</label> <input type="color" name="color">
+        </div>
+        <div>
+            <label>date</label><input type="date" name="date">
+        </div>
+        <div>
+            <label>time</label> <input type="time" name="time">
+        </div>
+        <div>
+            <input id="terms" type="checkbox"> <label for="terms">agree on conditions and terms</label>
+        </div>
+        <div>
+            <label>datetime</label> <input type="datetime-local" name="datetime">
+        </div>
+
+        <div>
+            <label>week</label> <input type="week" name="week" id="week">
+        </div>
+
+        <div>
+            <input type="range" min="0" max="100">
+        </div>
+        <div>
+            <label>email</label> <input type="email" name="email" autocomplete="off">
+        </div>
+        <div>
+            <label>facebookUrl</label> <input type="url" name="url">
+        </div>
+
+        <div>
+            <label>age</label> <input type="number" name="number" min="0" max="10" step="3">
+        </div>
+
+        <div>
+            <lab>fav pl</lab>
+            <select>
+                <option>c#</option>
+                <option>php</option>
+                <option>jave</option>
+            </select>
+
+
+        </div>
+        <div>
+            <lab>fav pl</lab>
+
+            <input list="pl">
+            <datalist id="pl">
+            <option>c#</option>
+            <option>php</option>
+            <option>jave</option>
+
+           </datalist>
+
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</body>
+
+</html>
