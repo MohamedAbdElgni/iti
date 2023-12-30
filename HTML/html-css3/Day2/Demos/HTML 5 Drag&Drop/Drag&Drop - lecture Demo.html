@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        #droppable1,
+        #droppable2 {
+            width: 350px;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+    <script>
+        //https://www.w3schools.com/html/html5_draganddrop.asp
+        var draggedElem;
+
+        function drop(event) {
+            event.preventDefault();
+            //document.querySelector("#droppable1").appendChild(draggedElem);
+            event.target.appendChild(draggedElem);
+        }
+    </script>
+</head>
+
+<body>
+
+    <p>Drag the image into the rectangle:</p>
+
+    <div id="droppable1" ondrop="drop(event)" ondragover="event.preventDefault()">
+        Drop your image here
+    </div>
+
+    <div id="droppable2" ondrop="drop(event)" ondragover="event.preventDefault()">
+        Drop your image here
+    </div>
+    <br>
+
+    <img id="html5" src="html5.png" draggable="true" ondragstart="draggedElem=this" width="336" height="69">
+
+    <img id="js" src="js.png" draggable="true" ondragstart="draggedElem=this" width="336" height="69">
+</body>
+
+</html>

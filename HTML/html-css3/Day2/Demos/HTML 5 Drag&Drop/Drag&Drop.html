@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        #div1 {
+            width: 350px;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+    <script>
+        //https://www.w3schools.com/html/html5_draganddrop.asp
+        var draggedElementID;
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+
+            //ev.dataTransfer.setData("draggableID", ev.target.id);
+            draggedElementID = ev.target.id;
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+
+            //var data = ev.dataTransfer.getData("draggableID");
+            if (draggedElementID == "html5")
+                ev.target.appendChild(document.getElementById(draggedElementID));
+        }
+    </script>
+</head>
+
+<body>
+
+    <p>Drag the image into the rectangle:</p>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        you can only drag HTML5 Image
+    </div>
+    <br>
+    <img id="js" src="js.png" draggable="true" ondragstart="drag(event)" width="336" height="69">
+    <img id="html5" src="html5.png" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
+</body>
+
+</html>

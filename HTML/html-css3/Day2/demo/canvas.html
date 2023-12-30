@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas">
+
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d");
+        context.strokeStyle = "blue"
+            // context.rect(20, 20, 30, 40);
+            // context.stroke()
+
+        context.fillStyle = "red"
+            // context.fillRect(50, 50, 40, 50)
+            // context.moveTo(10, 10)
+            // context.lineTo(100, 100)
+            // context.stroke()
+
+        // context.arc(50, 50, 10, 0, 2 * Math.PI, true)
+        // context.stroke()
+        context.font = "30px bold"
+        context.fillText("ITI", 50, 50)
+    </script>
+</body>
+
+</html>

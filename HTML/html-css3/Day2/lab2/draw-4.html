@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drawing task 4</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000;"></canvas>
+<div>
+    <label for="colorz">Select color</label>
+    <input type="color" name="" id="colorz">
+    <label for="reset">reset</label>
+    <input onclick="resetcan()" type="button" name="reset" id="reset" value="reset">
+</div>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+        var isDrawing = false;
+        
+        
+
+        canvas.addEventListener("mousedown", function (event) {
+            isDrawing = true;
+            draw(event);
+        });
+
+        canvas.addEventListener("mousemove", function (event) {
+            if (isDrawing) {
+                draw(event);
+            }
+        });
+
+        canvas.addEventListener("mouseup", function () {
+            isDrawing = false;
+            context.beginPath();
+        });
+
+        canvas.addEventListener("contextmenu", function (event) {
+            event.preventDefault(); 
+        });
+
+        canvas.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+        });
+
+        function draw(event) {
+            var x = event.clientX - canvas.getBoundingClientRect().left;
+            var y = event.clientY - canvas.getBoundingClientRect().top;
+            var scolor = document.getElementById('colorz').value
+            
+            if (event.buttons === 1) {
+                
+                context.fillStyle = scolor;
+            } else if (event.buttons === 2) {
+                
+                context.fillStyle = "white";
+            }
+
+            context.beginPath();
+            context.arc(x, y, 10, 0, 2 * Math.PI);
+            context.fill();
+            context.closePath();
+        }
+
+        function resetcan() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+</body>
+</html>

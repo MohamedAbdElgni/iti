@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smiley and Sad Face</title>
+</head>
+<body onload="draw()">
+    <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000;">
+
+    </canvas>
+
+    <script>
+        var canvas, context;
+        canvas = document.getElementById("myCanvas");
+        context = canvas.getContext("2d");
+        var base_image = new Image();
+        function draw() {
+                base_image.src = ''
+                base_image.src = 'sad.png';
+                base_image.onload = function () {
+                context.drawImage(base_image, 0, 0, canvas.width, canvas.height);
+                
+            };
+        }
+        canvas.addEventListener('mousedown',function(){
+            base_image.src = ''
+            context.drawImage(base_image, 0, 0, canvas.width, canvas.height);
+            base_image.src = 'smiley.png';
+            base_image.onload = function () {
+            context.drawImage(base_image, 0, 0, canvas.width+20, canvas.height+20);
+            console.log(base_image.src)
+            }
+        })
+
+        canvas.addEventListener('mouseup',function(){
+            base_image.src = 'sad.png';
+            base_image.onload = function () {
+            context.drawImage(base_image, 0, 0, canvas.width, canvas.height);
+            console.log(base_image.src)
+            }
+        })
+
+
+            
+    </script>
+    
+</body>
+</html>

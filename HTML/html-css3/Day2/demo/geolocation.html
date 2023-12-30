@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  
+navigator=>geolocation=>getcurrentposition(callbackfunction)
+
+callbackfunction(geo)
+    -->
+    <button onclick="getLoc()">getLoc</button>
+    <button onclick="getLongAndLatOnMap()">getLongAndLatOnMap</button>
+    <script>
+        function getLoc() {
+            navigator.geolocation.getCurrentPosition(getLatAndLog)
+            console.log("You get long & lat sucess")
+        }
+        var long;
+        var lat;
+
+        function getLatAndLog(geo) {
+            long = geo.coords.longitude;
+            lat = geo.coords.latitude;
+            console.log(long);
+            console.log(lat);
+        }
+
+        function getLongAndLatOnMap() {
+            //http://maps.google.com/maps?q=lat,long
+            var url = 'http://maps.google.com/maps?q=' + lat + ',' + long
+            window.open(url)
+        }
+    </script>
+</body>
+
+</html>

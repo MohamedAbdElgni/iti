@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ellipse {
+            /* fill: red; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <svg>
+        <defs>
+        <lineargradient id="linear" x1="0%" y1="0" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:red"></stop>
+<stop offset="50%" style="stop-color: blue;"></stop>
+<stop offset="100%" style="stop-color: rgb(73, 102, 15);"></stop>
+        </lineargradient>
+        <radialgradient id="radial" x1="0%" y1="0" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:red"></stop>
+            <stop offset="50%" style="stop-color: blue;"></stop>
+            <stop offset="100%" style="stop-color: rgb(73, 102, 15);"></stop>
+                    </radialgradient>
+    </defs>
+        <!-- <line x1="10px" y1="10px" x2="100px" y2="100px" stroke="red" stroke-width="3px"> -->
+  <!-- <rect x="10px" y="10px" width="100px" height="100px" fill="transparent" stroke="black" stroke-width="3px"></rect> -->
+      
+<!-- <circle cx="50px" cy="50px" r="30px" fill="blue" stroke="yellow" stroke-width="3px"></circle>-->
+<ellipse id="ellipse" cx="150px" fill="url(#radial)" cy="70px" rx="10px" ry="20px"></ellipse> 
+<!-- <text font-size="20px" x="50px" y="50px">
+    ITI
+</text> -->
+</svg>
+    <!-- <script>
+        var ellipse = document.getElementById("ellipse");
+        ellipse.addEventListener('click', function() {
+            ellipse.style.fill = "blue";
+            alert("this is ellipse")
+        })
+     
+    </script> -->
+</body>
+
+</html>
