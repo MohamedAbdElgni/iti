@@ -46,11 +46,11 @@
             <progress value="30" max="100">50%</progress>
             <div class="stars-sec">
                 <p>ratings</p>
-                <img src="empty_star.png" alt="" class="star" data-rating="0">
-                <img src="empty_star.png" alt="" class="star" data-rating="0">
-                <img src="empty_star.png" alt="" class="star" data-rating="0">
-                <img src="empty_star.png" alt="" class="star" data-rating="0">
-                <img src="empty_star.png" alt="" class="star" data-rating="0">
+                <img src="empty_star.png" alt="" onhover  class="star" data-rating="0">
+                <img src="empty_star.png" alt="" onhover  class="star" data-rating="0">
+                <img src="empty_star.png" alt="" onhover  class="star" data-rating="0">
+                <img src="empty_star.png" alt=""  onhover class="star" data-rating="0">
+                <img src="empty_star.png" alt=""  onhover class="star" data-rating="0">
                 
             </div>
     </article>
@@ -59,6 +59,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var stars = document.querySelectorAll('.star');
+
+            
             
     
             stars.forEach((star, index) => {
