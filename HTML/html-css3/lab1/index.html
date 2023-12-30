@@ -51,59 +51,65 @@
                 <img src="empty_star.png" alt="" class="star" data-rating="0">
                 <img src="empty_star.png" alt="" class="star" data-rating="0">
                 <img src="empty_star.png" alt="" class="star" data-rating="0">
-                <button id="clear-s">Clear Rating</button>
+                
             </div>
     </article>
     <footer>Mohamed Ahmed</footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const stars = document.querySelectorAll('.star');
-            const clearButton = document.getElementById('clear-s');
+            var stars = document.querySelectorAll('.star');
+            
+    
             stars.forEach((star, index) => {
+    
                 star.addEventListener('mouseover', function () {
-                    
-                    for (let i = 0; i <= index; i++) {
-                        stars[i].src = 'Filled_star.png';
-                    }
-                });
-        
-                star.addEventListener('mouseout', function () {
-                    if (!star.classList.contains('clicked')) {
-                        for (let i = 0; i < stars.length; i++) {
-                            if (stars[i].dataset.rating === '0') {
-                                stars[i].src = 'empty_star.png';
-                            }
+                    const currentRating = star.getAttribute('data-rating');
+    
+                    if (currentRating === '0') {
+                        stars.forEach((el) => {
+                            el.setAttribute('src', 'empty_star.png');
+                        });
+                        star.setAttribute('src', 'Filled_star.png');
+                        star.setAttribute('data-rating', '1');
+                        for (let i = index - 1; i >= 0; i--) {
+                            stars[i].setAttribute('src', 'Filled_star.png');
+                            stars[i].setAttribute('data-rating', '1');
                         }
+                    } else {
+                        
+                        stars.forEach((el) => {
+                            el.setAttribute('src', 'empty_star.png');
+                            el.setAttribute('data-rating', '0');
+                        });
                     }
                 });
-        
+    
+                
+    
                 star.addEventListener('click', function () {
-                    
-                    star.dataset.rating = '1'; 
-                    if (!star.classList.contains('clicked')) {
-                    for (let i = 0; i <= index; i++) {
-                        stars[i].src = 'Filled_star.png';
-                        stars[i].dataset.rating='1'
-                        star.classList.add('clicked');
+                    console.log(star.getAttribute('data-rating'));
+                    console.log(index);
+    
+                    stars.forEach((el) => {
+                        el.setAttribute('src', 'empty_star.png');
+                        el.setAttribute('data-rating', '0');
+                    });
+                    star.setAttribute('src', 'Filled_star.png');
+                    star.setAttribute('data-rating', '1');
+                    for (let i = index - 1; i >= 0; i--) {
+                        stars[i].setAttribute('src', 'Filled_star.png');
+                        stars[i].setAttribute('data-rating', '1');
                     }
-                }else{
-                    for (let i = 0; i <= index; i++) {
-                        stars[i].src = 'Filled_star.png';
-                        stars[i].dataset.rating='1'
-                        star.classList.remove('clicked');
-                    }
+                });
+    
+                if (star.getAttribute('data-rating') === '1') {
+                    star.setAttribute('src', 'Filled_star.png');
                 }
-                });
-            });
-            clearButton.addEventListener('click', function () {
-                stars.forEach(star => {
-                    star.classList.remove('clicked');
-                    star.dataset.rating = '0';
-                    star.src = 'empty_star.png';
-                });
+    
             });
         });
     </script>
-</body>
+    
+    
 </html>
