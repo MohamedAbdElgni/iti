@@ -1,0 +1,27 @@
+/* 
+font-size
+font-weight
+style
+
+font-family
+web safe font
+
+fall-back
+*/
+
+@font-face {
+    font-family: itiFont;
+    src: url(ge_ss_two_medium.ttf), url(ge_ss_two_medium.eot);
+}
+
+p {
+    /* font-family: monospace, 'Courier New', Courier, monospace; */
+    /* font-family: itiFont, monospace; */
+}
+
+p {
+    font-family: 'Vina Sans', sans-serif;
+}
+
+
+/*  web font */

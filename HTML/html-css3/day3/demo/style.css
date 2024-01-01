@@ -1,0 +1,51 @@
+/* 
+vendor prefix
+border-radius
+-o- opera
+-o-border-radius 
+-moz- mozile
+
+-moz-border-radiuse
+-webkit- chrome, saferia
+
+border-radius
+
+*/
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 2px solid;
+    /* border-radius:top-left top-right bottom-right bottom-left */
+    /* border-radius: 10px 20px 30px 40px; */
+    /* border-radius: 10px 20px; */
+    /* border-radius: 10px 20px 30px; */
+    /* border-radius:rx(all)/ry(all) 
+
+border-radius:(rx)top-left top-right bottom-right bottom-left/(ry)top-left top-right bottom-right bottom-left
+
+*/
+    /* border-radius: 10px 20px 30px 40px/30px 50px 10px 5px; */
+    /* border-radius: 10px 20px 30px 40px/30px 50px; */
+    /* border-radius: 100px; */
+}
+
+
+/* box-shadow 
+box-shadow:x y
+*/
+
+div {
+    box-shadow: 10px 20px;
+    /* box-shadow:x y blur */
+    box-shadow: 10px 20px 20px;
+    /* box-shadow:x y blur spread*/
+    box-shadow: 10px 20px 20px 10px;
+    /* box-shadow:x y blur spread color*/
+    box-shadow: 10px 20px 20px 10px rgb(185, 181, 181);
+    /* box-shadow:x y blur spread color inset*/
+    box-shadow: 10px 20px 20px 10px rgb(185, 181, 181) inset;
+}
+
+
+/* border-image */

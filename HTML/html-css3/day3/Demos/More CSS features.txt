@@ -1,0 +1,4 @@
+https://www.w3schools.com/cssref/css3_pr_filter.asp
+
+https://css-tricks.com/clipping-masking-css/
+https://css-tricks.com/using-css-masks-to-create-jagged-edges/

@@ -1,0 +1,48 @@
+.inlineblock1 {
+    width: 25%;
+    height: 200px;
+    background-color: brown;
+    /* display: inline-block; */
+    float: left;
+}
+
+.inlineblock2 {
+    width: 25%;
+    height: 200px;
+    background-color: brown;
+    /* display: inline-block; */
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.container {
+    width: 100%;
+    border: 1px solid;
+    height: 400px;
+    display: flex;
+    /* row column row-reverse column-reverse */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.one,
+.two,
+.three {
+    width: 25%;
+    height: 100px;
+    background-color: blue;
+}
+
+.two {
+    background-color: blueviolet;
+    align-self: start;
+}
+
+.three {
+    background-color: black;
+}
