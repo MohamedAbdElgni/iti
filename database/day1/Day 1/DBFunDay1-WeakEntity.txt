@@ -1,0 +1,10 @@
+Employee:
+ID	|Name	|Position	|Department
+1	|Ali	|Manager	|IT
+2	|Ramy	|Developer	|Testing
+---------------------------------------------------
+EmployeeFamilyMembers: Weak Entity
+EmployeeID	|ID	|Name	|Age	|Gender |Relation
+1		|3	|Ola	|20	|Female	|Daughter
+1		|4	|Karim	|12	|Male	|Son
+2		|5	|Noha	|30	|Female	|Wife

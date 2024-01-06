@@ -1,0 +1,25 @@
+Case 1: Phone attribute is simple-single
+ID	|Name	|Phone
+1	|Ali	|101010
+2	|Ramy	|303030
+------------------------------------
+Case 2: Phone attribute is simple-multivalued
+ID	|Name	|Phone
+1	|Ali	|101010
+		|808080
+2	|Ramy	|303030
+		|606060
+		|404040
+------------------------------------
+Case 3: Phone attribute is composite-single
+ID	|Name	|Code	|Number
+1	|Ali	|0020	|101010
+2	|Ramy	|0020	|303030
+------------------------------------
+Case 4: Phone attribute is composite-multivalued (Repeating Group)
+ID	|Name	|Code	|Number
+1	|Ali	|0020	|101010
+		|0966	|909090
+2	|Ramy	|0020	|303030
+		|0966	|808080
+		|0965	|707070
