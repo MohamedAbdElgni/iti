@@ -1,0 +1,23 @@
+0 Normal Form
+Student (#stu_id, name, location[city, street], tel, level, level_mgr, subject, sub_desc, grade)
+
+
+1st Normal Form: (Multi-value, composite, repeating group)
+stu_phone (*stu_id, #tel)
+student (#stu_id, name, city, street, level, level_mgr)
+stu_sub (#*stu_id, #subject, sub_desc, grade)
+
+
+2nd Normal Form: 1st NF + Partial Dependency
+stu_phone (*stu_id, #tel)
+student (#stu_id, name, city, street, level, level_mgr)
+subject (#subject, sub_desc)
+stu_sub (#*stu_id, #*subject, grade)
+
+
+3rd Normal Form: 2nd NF + Transitive Dependency
+stu_phone (*stu_id, #tel)
+level (#level, level_mgr)
+student (#stu_id, name, city, street, *level)
+subject (#subject, sub_desc)
+stu_sub (#*stu_id, #*subject, grade)
