@@ -1,8 +1,0 @@
-dept (name, #dnum, *mgr_ssn)
-emp (#ssn, name, address, gender, b_date, *d_num)
-proj (name, #pnum, location, *d_num)
-dependents (#f_name, gender, b_date, #*essn)
-work (#*pnum, #*essn, hours)
-dept_loc (#*dnum, #location)
-
-new_table(pk1, pk2, pk3, att_relation)

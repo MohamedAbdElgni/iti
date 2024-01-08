@@ -1,9 +1,0 @@
-Students (#app_no, name[first, last], city, postal_code, birth_date, 
-		phone, course_id, course_desc, enrolled, attended)
-
--app_no is the primary key for the table.
--"enrolled" column is specifically used to indicate whether a student is enrolled in the course or not.
--"attended" column is specifically used to register the number of days a student has attended the course.
--Each student can have multiple phone numbers.
--Each student can enroll in multiple courses.
-

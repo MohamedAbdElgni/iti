@@ -1,6 +1,5 @@
-    --1. Display (Using Union Function)
-        --a.  The name and the gender of the dependence that's gender is Female and depending on Female Employee.
-        --b.  And the male dependence that depends on Male Employee.        SELECT name, gender
+--1.      
+    SELECT name, gender
     FROM dependence
     WHERE gender = 'Female' AND employee_id IN (
         SELECT id
@@ -17,14 +16,14 @@
     );
 
 
---For each project, list the project name and the total hours per week (for all employees) spent on that project.
+--2
 
     SELECT project.name, SUM(hours)
     FROM project
     JOIN works_on ON project.id = works_on.project_id
     GROUP BY project.name;
 
---Display the data of the department which has the smallest employee ID over all employees' ID.
+--3
 
     SELECT *
     FROM department
@@ -33,14 +32,14 @@
             FROM employee
     );
 
---For each department, retrieve the department name and the maximum, minimum and average salary of its employees.
+--4
 
     SELECT department.name, MAX(salary), MIN(salary), AVG(salary)
     FROM department
     JOIN employee ON department.id = employee.department_id
     GROUP BY department.name;
 
---List the last name of all managers who have no dependents.
+--5
 
     SELECT last_name
     FROM employee
@@ -53,7 +52,7 @@
         )
     );
 
---For each department-- if its average salary is less than the average salary of all employees-- display its number, name and number of its employees.
+--6
     
     SELECT department.id, department.name, COUNT(employee.id)
     FROM department
@@ -63,7 +62,7 @@
         SELECT AVG(salary)
         FROM employee
     );
---Retrieve a list of employees and the projects they are working on ordered by department and within each department, ordered alphabetically by last name, first name.
+--7
 
     SELECT employee.last_name, employee.first_name, project.name
     FROM employee
@@ -71,7 +70,7 @@
     JOIN project ON works_on.project_id = project.id
     ORDER BY employee.department_id, employee.last_name, employee.first_name;
 
---Try to get the max 2 salaries using subquery
+--8
 
     SELECT TOP 2 MAX(salary)
     FROM employee
@@ -80,7 +79,7 @@
         FROM employee
     );
 
---Get the names of employees that is similar to any dependent name
+--9
 
     SELECT employee.first_name, employee.last_name
     FROM employee
@@ -88,11 +87,7 @@
     WHERE employee.first_name LIKE dependence.name OR employee.last_name LIKE dependence.name;
 
 
---    10. Do what is required if you know that : Mrs.Noha Mohamed(SSN=968574)  moved to be the manager of the new department (id = 100), and they give you(your SSN =102672) her position (Dept. 20 manager) 
-
-        --a. First try to update her record in the department table
-        --b. Update your record to be department 20 manager.
-        --c. Update the data of employee number=102660 to be in your teamwork (he will be supervised by you) (your SSN =102672)
+--10
 
         --10.a==>
         
@@ -117,31 +112,17 @@
         SET manager_id = 102672
 
         WHERE id = 102660;
+        
 
---Unfortunately the company ended the contract with Mr. Kamel Mohamed (SSN=223344) so try to delete his data from your database in case you know that you will be temporarily in his position.
---Hint: (Check if Mr. Kamel has dependents, works as a department manager, supervises any employees or works in any projects and handle these cases).
+--11
 
-    --a. Delete his data from the employee table.
-    --b. Delete his data from the dependence table.
-    --c. Delete his data from the works_on table.
-    --d. Delete his data from the department table.
-
-    -- check if Mr. Kamel has dependents
-
-    SELECT * FROM dependence WHERE employee_id = 223344;
-
-    -- check if Mr. Kamel works as a department manager
+    SELECT * FROM dependence WHERE employee_id = 223344;   
 
     SELECT * FROM department WHERE manager_id = 223344;
-
-    -- check if Mr. Kamel supervises any employees
-
+ 
     SELECT * FROM employee WHERE manager_id = 223344;
 
-    -- check if Mr. Kamel works in any projects
-
     SELECT * FROM works_on WHERE employee_id = 223344;
-
 
     --a. Delete his data from the employee table.
 
@@ -159,7 +140,7 @@
 
     DELETE FROM department WHERE manager_id = 223344;
 
---Try to update all salaries of employees who work in Project ‘AlRabwah’ by 30% 
+--12 
 
     UPDATE employee
     SET salary = salary * 1.3
