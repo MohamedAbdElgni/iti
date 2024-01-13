@@ -1,11 +1,9 @@
-
-
 .nav-link {
   color: rgb(10, 82, 82) !important;
   font-weight: 700;
   transition: all 0.5s linear;
   height: 100% !important;
-  padding-top:15px;
+  padding-top: 15px;
 }
 
 .navbar {
@@ -23,43 +21,113 @@
 }
 
 #navbarNav {
-  
-  margin: 0!important;
+  margin: 0 !important;
 }
 
-.icon{
-    transition: all .5s linear;
+.icon {
+  transition: all 0.5s linear;
 }
 
-.icon:hover{
-    cursor: pointer;
-    transform:scale(1.2)
+.icon:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
-.carousel-indicators > button{
-    border-radius: 50%;
-    width: 10px !important;
-    height: 10px !important;
-    margin-left: 10px !important;
+.carousel-indicators > button {
+  border-radius: 50%;
+  width: 10px !important;
+  height: 10px !important;
+  margin-left: 10px !important;
 }
 
 .card * {
-    border: 0;
-    text-align: center;
-    
-    color: aliceblue;
-}
-.card{
-    background-image: linear-gradient(120deg, #15853e 0%, #3780a5 100%);
-    padding-top: 10px  ;
-}
+  border: 0;
+  text-align: center;
 
-.card-header{
-    background-color: rgba(240, 248, 255, 0.226);
-    width: 60px;
-    
-    margin: auto;
-
-    border-radius: 70px !important;
+  color: aliceblue;
+}
+.card {
+  background-image: linear-gradient(120deg, #15853e 0%, #3780a5 100%);
+  padding-top: 10px;
+  border-radius: 0;
 }
 
+.card-header {
+  background-color: rgba(240, 248, 255, 0.226);
+  width: 60px;
+
+  margin: auto;
+
+  border-radius: 70px !important;
+}
+
+.card-off {
+  margin-right: 10px !important;
+}
+.card-title span {
+  color: #15853e;
+}
+
+ul li {
+  color: black !important;
+}
+
+.card {
+  position: relative;
+  cursor: pointer;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  visibility: hidden;
+  color: black !important;
+  transition: visibility 0s, opacity 0.5s ease;
+}
+
+.card-content > * {
+  color: black;
+}
+
+.card-title {
+  margin-bottom: 10px;
+}
+
+.btn-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  border-radius: 0;
+  background-color: #54dd86;
+  color: black;
+}
+
+.card:hover .card-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+.span-top-left {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  background-color: red;
+  border-radius: 0 0% 50% 50%;
+  color: black;
+}
+
+.span-top-left:hover {
+  background-color: #54dd86;
+  color: wheat;
+  font-weight: 600;
+}
