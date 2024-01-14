@@ -45,13 +45,14 @@ print $0
 echo "==================Q7 Start==================="
 awk 'BEGIN{
 	FS=":";
-	max=0;
+	
 }
 {
 	if($3>max){
 	    max=$3
+        maxinfo=$0
 	}
-} END{print "MaxID = " ,max} ' /etc/passwd
+} END{print "MaxInfo >>> " ,maxinfo} ' /etc/passwd
 
 echo "==================Q8 Start==================="
 awk 'BEGIN{
@@ -62,3 +63,4 @@ awk 'BEGIN{
     sum=sum+$3;
 }
 END {print "SumOFUserIds= ", sum}' /etc/passwd
+
