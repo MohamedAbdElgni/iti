@@ -1,0 +1,164 @@
+#! /usr/bin/bash
+#magic Line ==> define ==> interperter
+#print(10)
+#echo "I Love Linux and I hate Windows"
+<<COMMENT
+awk -F : '{
+print $1
+}' /etc/passwd
+COMMENT
+#========================================
+#Display line 2
+<<COMMENT
+awk -F : '{
+   if(NR == 2){
+   	print $0
+   }
+}' /etc/passwd
+COMMENT
+#========================================
+#Display line 2 and 3 
+<<COMMENT
+awk -F : '{
+   if(NR == 2 || NR == 3 ){
+   	print $0
+   }
+}' /etc/passwd
+COMMENT
+<<COMMENT
+# Display form 5 to 15
+awk -F : '{
+   if(NR >=5 && NR <= 15 ){
+   	print NR,$0
+   }
+}' /etc/passwd
+COMMENT
+# Display all normal User (id>=1000)
+#===================================
+<<COMMENT
+awk -F : '{
+   if( $3 >= 1000 && $3 <= 5000 ){
+   	print $0
+   }
+}' /etc/passwd
+COMMENT
+
+<<COMMENT
+awk ' BEGIN{
+	FS=":";
+	OFS=":";
+}
+{
+ for(i=1; i<=NF; i++){
+	if($i == "lp"){
+	   $i="mylp";
+	}	
+ }
+ print $0
+}' /etc/passwd
+COMMENT
+
+<<COMMENT
+awk 'BEGIN{
+	FS=":";
+	max=0;
+}
+{
+	if($3>max){
+	  max=$3
+	}
+} END{print max} ' /etc/passwd
+
+#cut -d: -f 3 /etc/passwd | sort -n | tail -1 
+COMMENT
+
+awk 'BEGIN{
+	FS=":";
+	sum=0;
+}
+{
+      sum=sum+$3;
+}
+ END{print sum} ' /etc/passwd
+
+#awk '{print $0}' <<< "test"
+	#test
+#awk -F : '{print $2}' <<< "test:ahmed"
+	#ahmed
+var="test:ahmed"
+awk -F : '{print $2}' <<< $var
+#ahmed
+#==============================
+awk '{
+  if(NR==5){
+	print $0
+  }
+}' /etc/passwd
+#==============================
+awk 'NR==5' /etc/passwd
+#======================================================
+split -l 10  /etc/passwd ~/Music/test/mina
+split -l 10  -d /etc/passwd ~/Music/test/mina
+====================================================
+ls -F / | grep '@' ==> All Shortcut
+ls -F / | grep '/' ==> All Directory
+ls -F / | grep '*' ==> All Executable
+====================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

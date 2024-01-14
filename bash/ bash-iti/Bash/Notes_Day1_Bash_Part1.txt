@@ -1,0 +1,171 @@
+CLI (Command Line Interface)
+
+Commands -->Terminal --> Shell (Interpeter)--> Kernel
+AutoTask 
+============
+File(Script Linux + For ...)-->Terminal--> Shell (Interpeter)--> Kernel
+============================================================================
+Vi --> intractive tool --> need Read before Write
+sed --> non-intractive tool --> no need Read before Write
+echo "Hello " >> file --> non-intractive  
+============================================================================
+
+sed 
+=====
+sed 'command' /etc/passwd
+1- Print 
+2- Delete
+3- Replacement Edit 
+================================Printing=============================================
+sed ===> by Default Print 
+sed  '' /etc/passwd ==> cat /etc/passwd
+sed '1p' /etc/passwd
+-n ==> Disable automatic printing
+sed -n '1p' /etc/passwd ==> head -1 /etc/passwd 
+sed -n '$p' /etc/passwd ==> tail -1 /etc/passwd 
+sed  -n '1,3p' /etc/passwd ==> head -3 /etc/passwd 
+sed  -n '3,5p' /etc/passwd ==> head -5 /etc/passwd | tail -3 
+================================================================
+Sed Regex :-
+================
+sed -n '/regex/p' /etc/passwd
+sed -n '/root/p' /etc/passwd ==> grep 'root' /etc/passwd
+sed -n '/^root/p' /etc/passwd  ==> grep '^root' /etc/passwd
+sed -n '/bash$/p' /etc/passwd ==> grep 'bash$' /etc/passwd
+sed -n '/^root/,/^lp/p' /etc/passwd  ==> from line start root to line start lp
+sed -n '1,/^lp/p' /etc/passwd
+================================ Deleting =============================================
+sed -n '1 !p' /etc/passwd
+sed '3d' /etc/passwd
+sed '/nologin$/d' /etc/passwd
+sed '/^root/d' /etc/passwd
+sed '3,$d' /etc/passwd #delete from line 3 to last line 
+================================ Change it =============================================
+sed 's/lp/mylp/g' /etc/passwd ==> Change it +Printing Default ==>all line
+sed -n 's/lp/mylp/g p' /etc/passwd ==> print only changed
+================================ More Command Sed=============================================
+sed -n -e '3p' -e '5p' /etc/passwd
+    bin:x:2:2:bin:/bin:/usr/sbin/nologin
+    sync:x:4:65534:sync:/bin:/bin/sync
+                        =====================
+sed -n -e '1p' -e 's/root/mina/g p' /etc/passwd
+    #root:x:0:0:root:/root:/bin/bash
+    #mina:x:0:0:mina:/mina:/bin/bash
+    #nm-openvpn:x:121:127:NetworkManager OpenVPN,,,:/var/lib/openvpn/chmina:/usr/sbin/nologin
+                        =======================
+sed -n -e 's/root/mina/g p' -e '1p' /etc/passwd
+    #mina:x:0:0:mina:/mina:/bin/bash
+    #mina:x:0:0:mina:/mina:/bin/bash
+    #nm-openvpn:x:121:127:NetworkManager OpenVPN,,,:/var/lib/openvpn/chmina:/usr/sbin/nologin
+==============================================================================================
+sed -i '3d' /etc/passwd #[ Don't use it in lab ] change Original File 
+                         =======================
+========================================================================
+AWK 
+=====
+Awk ==> Programming Language ==> for , if , ............
+$0 ==> Current line 
+
+
+HTML , CSS ==> No Programming Language==> don't have for loop , if condition
+Jinja ==> Template Enigne ==> for Python 
+
+HTML + For Loop +... ==> Template Engine ==> Pure HTML ==> Parser Browser 
+<li>
+    for
+<li>
+css [Var,function] ==> Sass  
+Bootstrap ==> Responsive Framework , Material UI 
+========================================================================
+RS==> Record Seperator (By Default = new line)
+FS==> field(Column)ecord Seperator (By Default = Space)
+NR==> Increment by ROW 
+$0==> Content Current line 
+    NR =1 ==> $0 ==>Content First line 
+    NR =2 ==> $0 ==>Content Second line 
+    NR =3 ==> $0 ==>Content Third line 
+NF==> Number of Filed (Columns)
+$1 ==> Content Column 1 
+$2 ==> Content Column 2 
+$3 ==> Content Column 3 
+$4 ==> Content Column 4 
+
+NR =1 ==> $1 ==>Content Column 1 ==> first line 
+NR =2 ==> $1 ==>Content Column 1 ==> Second line 
+NR =3 ==> $1 ==>Content Column 1 ==> Third line 
+
+...........
+========================================================================
+intialization 
+loop {
+    body //Repeate every iterate 
+}
+End Message 
+
+int i=0;//intialization
+int sum=0;//intialization
+while(i<10){
+    sum=sum+i; //Body 
+}
+print(sum) //End 
+========================================================================
+awk 'BEGIN{
+    //Intialization
+}
+{
+    body //Repeate Every new Line (Record)
+}
+END{
+    End Message
+} ' filepath
+=============================================================================================
+awk '{print $0}' /etc/passwd ==> cat /etc/passwd 
+awk '{print NR,$0}' /etc/passwd ==> cat -n /etc/passwd
+=========================Cutting Column [[ change delimiter ]]=================================
+change delimiter:-
+=======================
+method 1 using Option ==> awk -F : '{}' /etc/passwd
+method 2 using FS Variable ==> awk 'BEGIN{FS=":";} {} ' /etc/passwd
+=========================================================================
+awk -F : '{print NR,$1,$5}' /etc/passwd
+awk -F : '{print NR,"loginName = ",$1,"  | Comment =",$5}' /etc/passwd
+    #1 loginName =  root   | Comment = root
+==========================================================================
+awk 'BEGIN{FS=":";} {print NR,$1,$5}' /etc/passwd
+awk 'BEGIN{print "first"}{print "test"} END{print "last"}'
+=========================================================================== 
+mkdir /home/mina/Music/Benisuef_Bash_Command
+vi /home/mina/Music/Benisuef_Bash_Command/lec1 #==> echo "Hello" ==>:wq
+chmod u+x /home/mina/Music/Benisuef_Bash_Command/lec1
+
+lec1 ==> not Run 
+/home/mina/Music/Benisuef_Bash_Command/lec1 ==> Run
+==================================================================================================
+/home/mina/Music/Benisuef_Bash_Command/lec1 ==> run using Path can't run it using name 
+because /home/mina/Music/Benisuef_Bash_Command ==> not in PATH Variable 
+  
+echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+==================================================================================================
+Example 
+===========
+head -1 /etc/passwd
+/usr/bin/head -1 /etc/passwd
+===================================================================================
+PATH=$PATH:/home/mina/Music/Benisuef_Bash_Command
+# Any executable file in  Benisuef_Bash_Command Foleder can run it using name only 
+
+echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/mina/Music/Benisuef_Bash_Command
+
+lec1
+I Love Linux and I hate Windows
+
+
+echo "PATH=$PATH:/home/mina/Music/Benisuef_Bash_Command">> ~/.bashrc 
+tail -1 ~/.bashrc 
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/mina/Music/Benisuef_Bash_Command
+
+#close Terminal + Open new Terminal 
+========================================================================================
