@@ -52,3 +52,13 @@ awk 'BEGIN{
 	    max=$3
 	}
 } END{print "MaxID = " ,max} ' /etc/passwd
+
+echo "==================Q8 Start==================="
+awk 'BEGIN{
+	FS=":";
+	sum=0;
+}
+{
+    sum=sum+$3;
+}
+END {print "SumOFUserIds= ", sum}' /etc/passwd
