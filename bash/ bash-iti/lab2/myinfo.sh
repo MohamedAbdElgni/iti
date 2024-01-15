@@ -26,11 +26,11 @@ if grep -q "^$username:" /etc/passwd; then
         echo "No files copied."
     fi
 else
-    echo "User not found in /etc/passwd."
+    echo "User not exists"
 fi
 
-echo "Current processes status:"
-    ps aux
+echo "processes for user >>> $username:"
+    ps -u $username
 
 
 
