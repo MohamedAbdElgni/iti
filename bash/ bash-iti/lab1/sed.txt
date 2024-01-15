@@ -1,0 +1,9 @@
+ 1- sed -n '/lb/p' /etc/passwd
+
+ 2- sed -n '3 !p' /etc/passwd
+
+ 3- sed -n '$ !p' /etc/passwd
+  
+ 4- sed -n '/lb/!p' /etc/passwd
+
+ 5- sed 's/lp/mylp/g' /etc/passwd

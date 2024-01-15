@@ -1,0 +1,240 @@
+Type of Commands 
+======================
+1- External Command 
+2- Alias 
+3- Internal Command [Bulit in Shell]
+type commandName
+type if  #if is a shell keyword
+type cd  #cd is a shell builtin
+type cat  #cat is /usr/bin/cat
+type lec1  #lec1 is /home/mina/Music/Benisuef_Bash_Command/lec1
+type for  #for is a shell keyword
+type test  #test is a shell builtin
+type c  #c is aliased to `clear
+
+where is Command 
+=========================
+whereis command
+which command
+            ================
+whereis cat  #cat: /usr/bin/cat /usr/share/man/man1/cat.1.gz
+which cat  #/usr/bin/cat
+=============================================================================
+echo $$ #-->Current Process ID
+
+echo $$ #7995                        
+x=5
+bash # New Terminal Child 
+echo $$ #9026 
+echo $x #Empty 
+                            ===========
+echo $$ #7995                        
+export x=5
+bash # New Terminal Child 
+echo $$ #9026 
+echo $x #5
+# Close Child Terminal ==> exit
+=============================================================================
+How Run File :- 
+==========================
+Normal Run :- 
+===============
+Run File in Child Terminal (Open New Terminal)
+#lec2.sh
+##!/usr/bin/bash
+# echo "Process ID Runing File" $$ 
+# echo y=$y
+
+y=10
+lec2.sh 
+Process ID Runing File 9262
+y=
+                    ===================
+export y=10
+lec2.sh 
+Process ID Runing File 9267
+y=10
+===========================================================================================
+Sourcing Running  :-
+===================
+Run File in Same Terminal (Not Open New Terminal)
+#lec2.sh
+##!/usr/bin/bash
+# echo "Process ID Runing File" $$ 
+# echo y=$y
+z=10
+. lec2.sh 
+Process ID Runing File 9262
+z=10
+
+# . lec2.sh ==> source lec2.sh ==> Sourcing Running 
+# ./lec2.sh ==> Normal Running
+# . ./lec2.sh ==> source ./lec2.sh==> Sourcing Running 
+
+# ~/Music/Benisuef_Bash_Command/lec2.sh 
+# lec2.sh 
+# ./lec2.sh
+# source ~/Music/Benisuef_Bash_Command/lec2.sh or . ~/Music/Benisuef_Bash_Command/lec2.sh
+# source lec2.sh or . lec2.sh
+# source ./lec2.sh or . ./lec2.sh
+=================================Variables=================================================
+type of Variable 
+====================
+1- Local Variable 
+
+    x=5    # x =5 , x= 5 , x = 5 ==>Error
+    # By Default variable ==>String 
+    x=5+5
+    echo $x
+
+    # Integer Values :- 
+    # =======================
+    # Method 1 (Declare Variable as Integer )
+      typeset -i num1 (or) declare -i num2
+    # Example 
+       typeset -i num1
+       num1=5+5
+       echo $num1 #10
+    # Method 2 (using let)
+    x=10
+    let x=5+10
+    echo $x #15
+    # Method 3 (using  (())  )
+    x=10
+    ((x=5+10))  or x=$((5+10))
+    echo $x #15
+    # Method 3 (using  expr  )
+    x=`expr 5 + 10`
+    echo $x #15
+    x=$(expr 5 + 10)
+    echo $x #15
+    #floating Number :- 
+    #bc 
+# ============================================================================
+# How to print Value of Variable :-
+# ================================
+name="ahmed"
+
+echo Hello $name Mina   #Hello ahmed Mina
+echo Hello $nameMina   #Hello
+echo Hello ${name}Mina   #Hello ahmedMina
+# ==============================================================================
+Different Formating String
+# ============================== 
+1- without "" , '' 
+2- "" --> weak Qouting (Ignore Some Special Character)
+3- '' --> Strong Qouting (Ignore any Special Character)
+name=ahmed
+name2=mina
+echo hello $name $name2    #hello ahmed mina
+echo "hello $name $name2"   #hello ahmed mina
+echo 'hello $name $name2'   #hello $name $name2
+
+echo hello $name & $name2   ==> logical Error  & background
+echo "hello $name & $name2" ==> hello ahmed & mina
+
+echo "$name2 3 > linux" #mina 3 > linux
+
+touch file mina
+ls #file  mina
+touch 'file mina'
+ls #file  'file mina'   mina
+# ============================================================================================
+\ ==> new line (PS2) , Ignore Special Character
+# ==============================================
+echo Hello \  
+> Mina
+Hello Mina
+
+echo "\$name_python" #$name_python
+echo mina \& ahmed #mina & ahmed
+# ============================================================================================
+x=15
+echo $x #15
+unset x
+echo $x #Empty
+name_python="test"
+
+set | grep name_python
+name_python=test
+
+# ==============================================================================
+
+2- Enviroment Variables 
+3- Predefined Variables
+
+
+$$ ==> current Process ID 
+$? ==> Status Last Command  (0-->last Command Run Sucessfuly)
+$* ==> ALL Arguments 
+$@ ==> ALL Arguments 
+$# ==> number of  Arguments 
+$0 ==>Terminal==> Current shell[Not Current user Shell]
+$0 ==>File==> Path , File Name 
+$1 ==> first Argument
+$2 ==> Second Argument
+$3 ==> third Argument
+
+# Control Flow 
+# condition
+# test 
+# []
+# [[]]
+# (()) 
+
+test mina=mina && echo "True" || echo "Fasle"  #True #Logical Error
+test minas=mina && echo "True" || echo "Fasle"  #True#Logical Error
+test minas = mina && echo "True" || echo "Fasle"  #Fasle
+test mina = mina && echo "True" || echo "Fasle"  #True
+test minas ==mina && echo True || echo fasle
+#bash: test: minas: unary operator expected
+test minas== mina && echo True || echo fasle
+#bash: test: minas==: unary operator expected
+
+name=mina
+test name = mina && echo True || echo fasle  #fasle #Logical Error
+test $name = mina && echo True || echo fasle  #True
+[$name = mina] && echo True || echo fasle #Error
+#Command '[mina' not found, did you mean:
+[ $name = mina ] && echo True || echo fasle
+[ $name = m* ] && echo True || echo fasle #Error
+# bash: [: too many arguments
+
+[[ $name = m* ]] && echo True || echo fasle # True
+[ $name = mina -a ahmed = ahmed ] && echo True || echo fasle #True
+[ $name = mina && ahmed = ahmed ] && echo True || echo fasle
+# bash: [: missing `]'
+[[ $name = mina && ahmed = ahmed ]] && echo True || echo fasle #True
+[ $name = mina -o ahmed = ahmed ] && echo True || echo fasle #True
+
+[[ $name = mina || ahmed = ahmed ]] && echo True || echo fasle # True
+#====================================================================
+Compar Numbers :-
+# ===========================
+number=2
+[[ $number -eq 2 ]] && echo True || echo fasle  #True
+[[ $number -lt 2 ]] && echo True || echo fasle  #fasle
+[[ $number -gt 2 ]] && echo True || echo fasle  #fasle
+[[ $number -ge 2 ]] && echo True || echo fasle  #True
+[[ $number -le 2 ]] && echo True || echo fasle  #True
+#====================================================================
+(( $number == 2 )) && echo True || echo fasle  #True
+(( $number > 2 )) && echo True || echo fasle  #fasle
+(( $number < 2 )) && echo True || echo fasle  #fasle
+(( $number <= 2 )) && echo True || echo fasle  #True
+(( $number >= 2 )) && echo True || echo fasle  #True
+#====================================================================
+[ -f ~/Music/file ] && echo "T" || echo "F" #F
+ls Music/ 
+ # Bash_Commands          'file[0-9]'   test     testab   testad   testaf
+ # Benisuef_Bash_Command   filex        testaa   testac   testae
+[ -f ~/Music/filex ] && echo "T" || echo "F" #T
+[ -d ~/Music/filex ] && echo "T" || echo "F" #F
+[ -d ~/Music/test ] && echo "T" || echo "F" #T
+[ -e ~/Music/test ] && echo "T" || echo "F" #T
+[ -e ~/Music/file ] && echo "T" || echo "F" #F
+[ -e ~/Music/filex ] && echo "T" || echo "F" #T
+#====================================================================
+
+
+

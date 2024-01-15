@@ -1,0 +1,8 @@
+echo "Hell File 1 : "
+export x=5
+z=10
+v=20
+#call S2
+~/Music/Benisuef_Bash_Command/s2
+source ~/Music/Benisuef_Bash_Command/s2
+~/Music/Benisuef_Bash_Command/s2 $v "mina"

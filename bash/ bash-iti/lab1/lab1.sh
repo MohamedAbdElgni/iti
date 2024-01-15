@@ -31,12 +31,12 @@ awk -F : '{
 echo "==================Q6 Start==================="
 awk ' BEGIN{
 	FS=":";
-	OFS="-";
+	OFS="XX";
     }
         {
     for(i=1; i<=NF; i++){
-	    if($i == "lp"){
-	        $i="mylp";
+	if($i == "lp"){
+	$i="MYLP";
 	    }	
     }
 print $0
@@ -45,7 +45,7 @@ print $0
 echo "==================Q7 Start==================="
 awk 'BEGIN{
 	FS=":";
-	
+	max=0
 }
 {
 	if($3>max){
@@ -63,4 +63,9 @@ awk 'BEGIN{
     sum=sum+$3;
 }
 END {print "SumOFUserIds= ", sum}' /etc/passwd
+
+
+
+
+
 

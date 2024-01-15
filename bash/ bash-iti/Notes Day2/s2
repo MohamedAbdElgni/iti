@@ -1,0 +1,6 @@
+echo "==================================="
+echo "Hello File 2 : "
+echo x= $x
+echo z= $z
+echo v= $1 #Argument 1
+
