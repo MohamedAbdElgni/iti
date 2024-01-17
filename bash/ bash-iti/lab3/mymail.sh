@@ -20,7 +20,7 @@ echo "Finish Send Emails"
 
 
 
-# #check if emails sent 
+ 
 # for user in $users
 # do 
 #    echo "==============================="
