@@ -1,0 +1,14 @@
+--5. Display male students who are born before 1991-10-01.
+
+select * from student
+WHERE birth_date < '1995-10-01' and gender = 'male';
+
+--6. Display students’ names that begin with A.
+select * from student
+WHERE e_name like 'A%';
+
+--7 Display subjects and their max score sorted by max score.
+select sub_name, max_score from subject
+ORDER by max_score Desc;
+
+--8 Display all students and track name they belong to.

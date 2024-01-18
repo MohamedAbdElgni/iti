@@ -1,0 +1,49 @@
+-- Insert into Track table
+INSERT INTO track (track_name) VALUES
+('frontend'),
+('backend'),
+('uxui'),
+('ubuntu');
+
+
+INSERT INTO subject (sub_name, max_score) VALUES
+('python', 100),
+('sql', 100),
+('html', 50),
+('javascript', 70),
+('bash', 70);
+
+
+INSERT INTO exam (date) VALUES
+('2024-01-18'),
+('2023-02-15'),
+('2020-05-10'),
+('2022-04-30');
+
+
+INSERT INTO student (e_name,email,address,phone,track_id,gender,birth_date) VALUES
+('Mohamed', 'mohamed@gmial.com', 'cairo', '010123456', 1, 'male','1985-1-15'),
+('sara', 'sara@gmail.com', 'giza', '0115421542', 2, 'female','1982-7-25'),
+('ahmed', 'ahmed@yahoo.com', 'caieo', '27201452', 1, 'male','1995-5-4'),
+('ali', 'ali@gmail.com', 'alex', '012345678', 3, 'male','1998-6-7');
+
+
+INSERT INTO grades (stu_id, sub_id, exam_id, grade) VALUES
+(1, 1, 1, 85),
+(2, 2, 1, 80),
+(3, 3, 1, 70),
+(4, 4, 1, 80);
+
+
+INSERT INTO track_sub (track_id, sub_id) VALUES
+(1, 1),
+(1, 2),
+(2, 2),
+(3, 3);
+
+
+INSERT INTO stu_sub (stu_id, sub_id) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4);
