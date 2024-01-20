@@ -215,7 +215,7 @@ function login() {
     }else{
         password.removeClass('is-invalid');
     }
-
+    window.location.href = "home.html"
     alert('login successful');
     //add user mail to cookies
     document.cookie = "useremail=" + user.email;

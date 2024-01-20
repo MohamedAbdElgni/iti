@@ -66,24 +66,29 @@
                 <div class="col-md-4 col-sm-12 mb-2 mb-md-0 m-0 text-center justify-items-center">
                     <div class="row position-relative bos-pro justify-content-center align-items-center">
                         <div class="col d-flex justify-content-center">
-                            <span class="col-1 rounded-circle d-flex align-items-center justify-content-center icon-face forsvg fs-3">
+                            <span
+                                class="col-1 rounded-circle d-flex align-items-center justify-content-center icon-face forsvg fs-3">
                                 <i class="fa-solid fa-gamepad"></i>
                             </span>
                         </div>
-                        <div class="col d-flex justify-content-center"> 
-                            <span class="col-1 rounded-circle d-flex align-items-center justify-content-center fs-3 icon-face forsvg">
+                        <div class="col d-flex justify-content-center">
+                            <span
+                                class="col-1 rounded-circle d-flex align-items-center justify-content-center fs-3 icon-face forsvg">
                                 <i class="fa-solid fa-grip"></i>
                             </span>
                         </div>
-                        <div class="col d-flex justify-content-center"> 
-                            <span class="col-1 rounded-circle d-flex align-items-center justify-content-center fs-3 icon-face forsvg">
+                        <div class="col d-flex justify-content-center">
+                            <span
+                                class="col-1 rounded-circle d-flex align-items-center justify-content-center fs-3 icon-face forsvg">
                                 <i class="fa-brands fa-facebook-messenger"></i>
                             </span>
                         </div>
-                        <div class="col d-flex justify-content-center"> 
+                        <div class="col d-flex justify-content-center">
                             <span
                                 class="col-1 text-danger rounded-circle d-flex align-items-center justify-content-center fs-3 icon-face forsvg">
-                                <a href="index.html"><i class="fa-solid text-danger fa-door-open" ></i></a>
+                                <a id="logout" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+                                        class="fa-solid text-danger fa-door-open"></i></a>
+
                             </span>
                         </div>
                     </div>
@@ -92,6 +97,8 @@
 
 
             </div>
+
+
         </nav>
         <!-- End of nav -->
 
@@ -99,7 +106,24 @@
 
 
     </main>
-
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog text-center">
+            <div class="modal-content text-center">
+                <div class="modal-header text-center">
+                    <h1 class="modal-title fs-5 text-center" id="staticBackdropLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    Are you sure you want to logout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="logoutfun" type="button" class="btn btn-danger">logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
