@@ -1,0 +1,46 @@
+* {
+  font-family: "Tilt Neon", sans-serif;
+  font-weight: bold;
+}
+
+footer {
+  font-size: small;
+}
+
+.icon-face > :hover {
+  color: rgb(13, 110, 253);
+  cursor: pointer;
+}
+.icon-face > :active {
+  color: rgb(13, 110, 253);
+  cursor: pointer;
+}
+
+.icon-face >  {
+  color: rgb(13, 110, 253);
+  cursor: pointer;
+}
+.center-items {
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+}
+
+.center-items > {
+  padding: 0;
+  margin: 0;
+  align-self: auto;
+}
+
+.forsvg , .icon-face> {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-dark {
+  background-color: rgb(13, 110, 253);
+  border-color: rgb(13, 110, 253);
+  text-align: center;
+  margin: auto;
+  
+}

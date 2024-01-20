@@ -1,31 +1,31 @@
-CREATE Table student(
+create Table student(
 	id serial primary key,
 	e_name varchar(40),
 	email varchar(50),
 	address varchar(50),
 	phone varchar(13) Unique ,
 	track_id integer, --forign key
-	gender VARCHAR(6) DEFAULT 'male' CHECK (gender IN ('male', 'female'))
+	gender VARCHAR(6) DEFAULT 'male' check (gender IN ('male', 'female'))
 );
 
-CREATE Table track(
+create Table track(
 	id serial primary key,
 	track_name varchar(40)
 );
 
-CREATE Table subject(
+create Table subject(
 	id serial primary key,
 	sub_name varchar(40),
 	max_score numeric
 	
 );
 
-CREATE Table exam(
+create Table exam(
 	id serial primary key,
 	date date
 );
 
-CREATE Table grades(
+create Table grades(
 -- comp pk
 	stu_id integer ,--forign key ckp1
 	sub_id integer ,--forign key cpk2
@@ -33,12 +33,12 @@ CREATE Table grades(
 	grade numeric
 );
 
-CREATE Table track_sub(
+create Table track_sub(
 	track_id integer ,--forign key ckp1
 	sub_id integer	--forign key cpk2
 );
 
-CREATE Table stu_sub(
+create Table stu_sub(
 	stu_id integer ,--forign key ckp1
 	sub_id integer	--forign key cpk2
 );

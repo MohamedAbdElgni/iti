@@ -2,26 +2,26 @@
 ----------------
 -- Student Table
 ----------------
-ALTER TABLE student
-ADD COLUMN birth_date date CHECK (birth_date < '2004-01-01'),
+Alter table student
+add column birth_date date check (birth_date < '2004-01-01'),
 
-ADD CONSTRAINT fk_track_id
-FOREIGN KEY (track_id) REFERENCES track(id);
+add constraint fk_track_id
+foreign key (track_id) REFERENCES track(id);
 -----------------
 -- Grades Table
 -----------------
-ALTER TABLE grades
+alter table grades
 
-ADD CONSTRAINT fk_stu_id
-FOREIGN KEY (stu_id) REFERENCES student(id),
+add constraint fk_stu_id
+foreign key (stu_id) REFERENCES student(id),
 
-ADD CONSTRAINT fk_sub_id
-FOREIGN KEY (sub_id) REFERENCES subject(id),
+add constraint fk_sub_id
+foreign key (sub_id) REFERENCES subject(id),
 
-ADD CONSTRAINT fk_exam_id
-FOREIGN KEY (exam_id) REFERENCES exam(id),
+add constraint fk_exam_id
+foreign key (exam_id) REFERENCES exam(id),
 
-ADD CONSTRAINT comppk_grades
+add constraint comppk_grades
 Primary KEY (stu_id,sub_id);
 
 
@@ -30,28 +30,28 @@ Primary KEY (stu_id,sub_id);
 ------------------
 ALTER TABLE track_sub
 
-ADD CONSTRAINT fk_track_id
-FOREIGN KEY (track_id) REFERENCES track(id),
+add constraint fk_track_id
+foreign key  (track_id) REFERENCES track(id),
 
-ADD CONSTRAINT fk_sub_id
-FOREIGN KEY (sub_id) REFERENCES subject(id),
+add constraint fk_sub_id
+foreign key (sub_id) REFERENCES subject(id),
 
-ADD CONSTRAINT comppk_track_sub
-Primary KEY (track_id,sub_id);
+add constraint comppk_track_sub
+Primary key (track_id,sub_id);
 
 ----------------
 -- Stu_Sub Table
 ----------------
-ALTER TABLE stu_sub
+alter table stu_sub
 
-ADD CONSTRAINT fk_stu_id
-FOREIGN KEY (stu_id) REFERENCES student(id),
+add constraint fk_stu_id
+foreign key (stu_id) REFERENCES student(id),
 
-ADD CONSTRAINT fk_sub_id
-FOREIGN KEY (sub_id) REFERENCES subject(id),
+add constraint fk_sub_id
+foreign key  (sub_id) REFERENCES subject(id),
 
-ADD CONSTRAINT comppk_stu_sub
-Primary KEY (stu_id,sub_id);
+add constraint comppk_stu_sub
+primary key (stu_id,sub_id);
 
 
 

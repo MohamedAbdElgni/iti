@@ -1,0 +1,77 @@
+--1-- Create a view for tracks names and the subjects which belong to it.
+--create VIEW vtracksubs as 
+--select t.track_name, s.sub_name
+
+--from track as t
+--join track_sub as ts on t.id = ts.track_id
+--join subject as s on ts.sub_id = s.id;
+
+select * from vtracksubs;
+
+--2-- Create a view for student names with their subject's names which will study.
+
+select s.e_name , sub.sub_name
+from student as s
+join stu_sub as ss on ss.stu_id = s.id  
+join subject as sub on sub.id = ss.sub_id;
+
+--3 Add gender column for the student table[Enum]. It holds two value (male or female)
+--type
+--CREATE TYPE gendertype as ENUM('male', 'female');
+
+--alter table student
+--Add column gender2 gendertype;
+
+
+
+--4-- Delete the address and email columns and replace it with contact_info (Address, email) as Composite Data type
+--alter Table student
+--drop column address,
+--Drop column email;
+
+--create TYPE contact_info AS (
+    --address VARCHAR(255),
+    --email VARCHAR(255)
+--);
+
+--alter Table student
+--ADD column contact_info contact_info;
+--5 Add birth date column for the student table.
+--alter table student
+--add column birth_date2 date;
+
+--6-- Display name and age of each student.
+select e_name, age(birth_date) as age
+from student;
+
+--7-- Display the name of students with the year of b_date.
+select e_name,EXTRACT(YEAR from birth_date) as b_year
+from student;
+
+--8-- Add new exam, in date column use NOW() function.
+
+insert into exam(date) values(now());
+
+
+
+--9-- Display the number of students’ their name is “Mohammed.
+select count (*) 
+from student 
+where e_name='Mohammed';
+
+
+--10-- Display the number of males and females.
+
+select gender, count(*) from student
+group by gender ;
+
+--11-- Display the repeated first names and their counts if higher than 2
+select e_name, count(*) 
+from student
+group by e_name
+having count(*) > 2;
+
+
+
+
+
