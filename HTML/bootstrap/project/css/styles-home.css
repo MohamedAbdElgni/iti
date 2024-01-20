@@ -45,3 +45,123 @@ footer {
   
 }
 
+main{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.fixed-column {
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  
+  overflow-y: auto;
+  background-color: #f8f9fa; 
+  padding: 20px;
+  z-index: 1; 
+  width: 20vw; 
+}
+
+
+.fixed-column img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.content {
+  margin-left: 20vw;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  
+}
+
+.fixed-column-right {
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  right: 0;
+  overflow-y: auto;
+  background-color: #f8f9fa; 
+  padding: 20px;
+  z-index: 1; 
+  width: 20vw; 
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 768px) {
+  .fixed-column {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .content {
+    
+    margin: 0;
+    width: 95vw;
+
+  }
+  .fixed-column-right {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .content {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .fixed-column {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .content {
+    margin: 0;
+    width: 95vw;
+  }
+  .fixed-column-right {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .content {
+    margin-right: 0;
+  }
+  
+}
+
+@media screen and (max-width: 400px) {
+  .fixed-column {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .content {
+    margin: 0;
+    width: 100vw;
+  }
+
+  .content * {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  .fixed-column-right {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .fixed-column-right {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .content {
+    margin-right: 0;
+  }
+  
+}
