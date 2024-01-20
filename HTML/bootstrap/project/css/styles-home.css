@@ -91,7 +91,7 @@ main{
   width: 20vw; 
 }
 
-/* Add media query for responsiveness */
+
 @media (max-width: 768px) {
   .fixed-column {
     width: 100%;

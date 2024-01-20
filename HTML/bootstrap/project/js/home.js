@@ -11,6 +11,7 @@ $(document).ready(function () {
     
     const useremail = getCookie('useremail');
     if (!useremail) {
+        alert("Please Login First to access this page");
         window.location.href = "index.html";
     }
 })
