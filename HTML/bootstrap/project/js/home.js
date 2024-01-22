@@ -1,6 +1,6 @@
 $(document).ready(function () {
     const logoutbtn = $('#logoutfun');
-    
+
 
 
     logoutbtn.click(function () {
@@ -8,7 +8,7 @@ $(document).ready(function () {
         window.location.href = "index.html";
     }
     );
-    
+
     const useremail = getCookie('useremail');
     if (!useremail) {
         alert("Please Login First to access this page");
@@ -30,7 +30,7 @@ function getCookie(cookieName) {
         }
     }
 
-    return null; 
+    return null;
 }
 
 

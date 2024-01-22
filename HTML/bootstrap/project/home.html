@@ -19,32 +19,36 @@
         rel="stylesheet">
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.bundle.min.js.map"></script>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/styles-home.css">
-    <title>realhome</title>
+    <title>Home</title>
+
+    <link rel="icon" href="https://www.facebook.com/images/fb_icon_325x325.png" type="image/icon type">
 </head>
 
 <body>
 
-    <div class="container">
-
-        <nav class="navbar navbar-expand-lg p-2 navbar-light nav-underline fixed-top pt-2 shadow row-fluid "
-            style="background-color: #f8eeee; height: auto;">
-            <div class="container-fluid center-items">
-                <!-- logo  Search -->
-                <div class="logosearch col-md-4 col-sm-12 mb-2 mb-md-0 text-center text-md-start m-sm">
-                    <div class="row justify-content-center justify-content-md-start align-items-center">
-                        <div class="logo col-2 col-md-2 col-sm-2">
-                            <i class="fa-brands fa-facebook fs-1 text-primary"></i>
-                        </div>
-                        <div class="col-8 p-0 pl-2">
-                            <input class="form-control rounded-5" type="search" placeholder='Search'
-                                aria-label="Search">
+    <!-- nav bar -->
+    <div class="nav row shadow position-fixed top-0 start-0 end-0 pl-4"
+        style="z-index: 999; background-color: rgb(243, 241, 238);">
+        <nav class="navbar navbar-expand-sm  navbar-dark">
+            <div class="container-fluid justify-content-sm-evenly">
+                <!-- col1 -->
+                <div class="navbar-brand col-4 col-md-4 col-sm-4 pl-5 ">
+                    <div class="logosearch ">
+                        <div class="row justify-content-center justify-content-md-start align-items-center">
+                            <div class="logo col-4 col-md-2 col-sm-2">
+                                <i class="fa-brands fa-facebook fs-1 text-primary" style="margin-left:10px ;"></i>
+                            </div>
+                            <div class="col-8 p-0 pl-2">
+                                <input class="form-control rounded-5" type="search" placeholder='Search'
+                                    aria-label="Search">
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!--second col  -->
-                <div class="col-md-4 col-sm-12 mb-2 mb-md-0 m-0 text-center">
+                <!-- col2 -->
+                <div class="col-md-3  mb-2 mb-md-0 m-0 text-center row-">
                     <div class="row justify-content-center">
                         <div class="col-2 icon-face position-relative">
                             <i class="fas fa-home fs-5 position-relative"></i>
@@ -63,146 +67,157 @@
                         </div>
                     </div>
                 </div>
+                <!-- col3 -->
+                <div class="col-4 col-md-3">
+                    <button class="navbar-toggler text-bg-primary mt-3 justify-content-sm-center text-sm-center "
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <!-- third col  -->
-                <div class="col-md-4 col-sm-12 mb-2 mb-md-0 m-0 text-center justify-items-center">
-                    <div class="row position-relative bos-pro justify-content-center align-items-center">
-                        <div class="col d-flex justify-content-center">
-                            <span
-                                class="col-1 rounded-circle d-flex align-items-center justify-content-center icon-face forsvg fs-3">
-                                <i class="fa-solid fa-gamepad"></i>
-                            </span>
-                        </div>
-                        <div class="col d-flex justify-content-center">
-                            <span
-                                class="col-1 rounded-circle d-flex align-items-center justify-content-center fs-3 icon-face forsvg">
-                                <i class="fa-solid fa-grip"></i>
-                            </span>
-                        </div>
-                        <div class="col d-flex justify-content-center">
-                            <span
-                                class="col-1 rounded-circle d-flex align-items-center justify-content-center fs-3 icon-face forsvg">
-                                <i class="fa-brands fa-facebook-messenger"></i>
-                            </span>
-                        </div>
-                        <div class="col d-flex justify-content-center">
-                            <span
-                                class="col-1 text-danger rounded-circle d-flex align-items-center justify-content-center fs-3 icon-face forsvg">
-                                <a id="logout" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
-                                        class="fa-solid text-danger fa-door-open"></i></a></span>
-                        </div>
+                    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item">
+                                <a class="nav-link " href="#"><i class="fa-solid fa-grip "></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa-brands fa-facebook-messenger"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                        class="fa-solid text-danger fa-door-open"></i></a>
+                            </li>
+
+                            <!-- Button trigger modal -->
+
+
+
+                        </ul>
                     </div>
                 </div>
             </div>
         </nav>
+    </div>
 
-        <div class="row navghost" style="height: 70px;"></div>
+    <div class="container-fluid midpage">
+        <div class="row  ">
 
-        <!-- secound row or main row -->
-        <div class="row position-relative">
+            <div class="col-4">
+                <img src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                    class="rounded-circle" alt="Cinque Terre" style="width: 30px;">
+                <span style="font-size: 12px;">Welcome Mohamed</span>
 
-            <div class="col-lg-3 fixed-column">
-                <div><img src="th.jpeg" class="rounded-circle" alt="Cinque Terre" style="width: 60px;">
-                    <span>mahmoud mouhamed</span>
-                </div>
-                <div> <i class="bi bi-bookmark-fill" style="font-size: 25px;"></i> <span>الاصدقاء</span></div>
-                <div> <i class="bi bi-calendar3-event" style="font-size: 25px;"></i> <span>العناصر المحفوظه</span></div>
-                <div><i class="bi bi-bookmark-fill" style="font-size: 25px;"></i> <span>الذكرايات</span></div>
-                <div><i class="bi bi-bookmark-fill" style="font-size: 25px;"></i> <span>المجموعات </span></div>
-                <div> <i class="bi bi-bookmark-fill" style="font-size: 25px;"></i> <span>الفيديو</span></div>
+                <div class="mt-2 ml-1 pl-2"><i class="fa-solid fa-user-group"></i> <span>Frinds</span></div>
+                <div class="mt-2 ml-1 pl-2"> <i class="fa-solid fa-floppy-disk"></i><span>saved</span></div>
+                <div class="mt-2 ml-1 pl-2"><i class="fa-solid fa-memory"></i> <span>memory</span></div>
+                <div class="mt-2 ml-1 pl-2"><i class="fa-solid fa-people-group"></i> <span>groups </span></div>
+                <div class="mt-2 ml-1 pl-2"> <i class="fa-solid fa-video"></i><span>Video</span></div>
+                <div class="mt-2 ml-1 pl-2"> <i class="fa-solid fa-shop"></i> <span>marketplace</span></div>
 
-
-                <div> <i class="bi bi-bookmark-fill" style="font-size: 25px;"></i> <span>marketplace</span></div>
-                <div><i class="bi bi-bookmark-fill" style="font-size: 25px;"></i> <span>messenger</span></div>
-                <div> <i class="bi bi-bookmark-fill" style="font-size: 25px;"></i> <span>التبرع بالدم</span></div>
-                <div><i class="bi bi-bookmark-fill" style="font-size: 25px;"></i> <span>الصفحات</span></div>
-                <div> <i class="bi bi-bookmark-fill" style="font-size: 25px;"></i> <span>المناسبات</span></div>
                 <hr>
-                <p>your group</p>
-                <div> <img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>ITI smart</span>
-                </div>
-                <div><img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>magic swap
-                        puzzle</span></div>
-                <div> <img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span> togethet group
+
+                <p>your groups</p>
+                <div> <img
+                        src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                        style="border-radius: 50%; width: 20px; margin: 3px;"> <span
+                        style="font-size: 12px;">group1</span></div>
+                <div><img
+                        src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                        style="border-radius: 50%; width: 20px; margin: 3px;"> <span
+                        style="font-size: 12px;">group2</span></div>
+                <div> <img
+                        src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                        style="border-radius: 50%; width: 20px; margin: 3px;"> <span style="font-size: 12px;"> group3
                     </span></div>
-                <div><img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>ITI 3 month</span>
-                </div>
-                <div> <img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>good mood</span>
-                </div>
+                <div><img
+                        src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                        style="border-radius: 50%; width: 20px; margin: 3px;"> <span
+                        style="font-size: 12px;">group5</span></div>
+
+
             </div>
-
-
-            <div class="col-lg-6 d-flex content" style="flex-direction: column;">
-                <!-- story -->
+            <div class=" col">
                 <div class="d-flex">
-                    <div class="card" style="width:80px; height: 120px; margin-left: 12px; position: relative;">
-                        <img style="height: 120px;" src="th.jpeg" class="card-img-top">
-                        <p style="position: absolute; top: 95px; color: white;">your story</p>
+
+
+                    <div class="card" style="width:80px; height: 120px; margin-left: 7px; position: relative;">
+                        <img style="height: 120px;"
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            class="card-img-top">
+                        <p style="position: absolute; top: 95px; color: white;font-size: 12px; left: 10px;">your story
+                        </p>
                     </div>
-                    <div class="card" style="width:80px; height: 120px; margin-left: 12px; position: relative;">
-                        <img style="height: 120px;" src="th.jpeg" class="card-img-top">
-                        <p style="position: absolute; top: 95px; color: white;">your story</p>
+                    <div class="card" style="width:80px; height: 120px; margin-left: 7px; position: relative;">
+                        <div class="position-absolute z-3 " style="z-index: -2;">
+                            <img style="height: 120px;"
+                                src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                                class="card-img-top">
+                            <p style="position: absolute; top: 95px; color: white;font-size: 12px; left: 10px; ;">your
+                                story
+                            </p>
+                        </div>
+
                     </div>
-                    <div class="card" style="width:80px; height: 120px; margin-left: 12px; position: relative;">
-                        <img style="height: 120px;" src="th.jpeg" class="card-img-top">
-                        <p style="position: absolute; top: 95px; color: white;">your story</p>
+                    <div class="card" style="width:80px; height: 120px; margin-left: 7px; position: relative;">
+                        <img style="height: 120px;"
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            class="card-img-top">
+                        <p style="position: absolute; top: 95px; color: white;font-size: 12px; left: 10px;">your story
+                        </p>
                     </div>
-                    <div class="card" style="width:80px; height: 120px; margin-left: 12px; position: relative;">
-                        <img style="height: 120px;" src="th.jpeg" class="card-img-top">
-                        <p style="position: absolute; top: 95px; color: white;">your story</p>
+                    <div class="card" style="width:80px; height: 120px; margin-left: 7px; position: relative;">
+                        <img style="height: 120px;"
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            class="card-img-top">
+                        <p style="position: absolute; top: 95px; color: white;font-size: 12px; left: 10px;  ">your story
+                        </p>
                     </div>
-                    <div class="card" style="width:80px; height: 120px; margin-left: 12px; position: relative;">
-                        <img style="height: 120px;" src="th.jpeg" class="card-img-top">
-                        <p style="position: absolute; top: 95px; color: white;">your story</p>
-                    </div>
-                    <div class="card" style="width:80px; height: 120px; margin-left: 12px; position: relative;">
-                        <img style="height: 120px;" src="th.jpeg" class="card-img-top">
-                        <p style="position: absolute; top: 95px; color: white;">your story</p>
+                    <div class="card" style="width:80px; height: 120px; margin-left: 7px; position: relative;">
+                        <img style="height: 120px;"
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            class="card-img-top">
+                        <p style="position: absolute; top: 95px; color: white;font-size: 12px; left: 10px;  ">your story
+                        </p>
                     </div>
 
                 </div>
-                <!-- under story -->
-
-                <div style="margin-top: 20px;width: 600px; height: 150px; border-radius: 20px; "
-                    class="bg-white shadow ">
+                <div style="margin-top: 20px;width: 450px; height: 100px; border-radius: 5px; "
+                    class="bg-white shadow col ">
                     <div style="display: flex;">
-                        <img src="th.jpeg"
-                            style="width: 40px; border-radius: 50%; height: 40px; margin-top: 15px; margin-left: 12px;">
+                        <img src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            style="width: 40px; border-radius: 50%; height: 40px; margin-top: 7px; margin-left: 7px;">
 
-                        <input class="form-control me-2" type="search" placeholder="بم تفكر يا mahmoud"
-                            aria-label="Search" style="margin: 20px;">
+                        <input class="form-control me-2" type="search" placeholder="share a post" aria-label="Search"
+                            style="margin: 10px;">
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div><span>فيديو بث مباشر</span>
+                    <div class="row d-flex text-center justify-content-evenly ">
+                        <div class="col">
+                            <div><span>Video</span>
 
-                                <i class="bi bi-camera-video-fill"></i>
+                                <i class="fa-solid fa-video"></i>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div><span> صور/فيديو</span>
-                                <i class="bi bi-camera-video-fill"></i>
+                        <div class="col">
+                            <div><span>pic ov video</span>
+                                <i class="fa-solid fa-image"></i>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div><span> شعور/ نشاط</span>
+                        <div class="col">
+                            <div><span>star</span>
 
-                                <i class="bi bi-camera-video-fill"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
                         </div>
                     </div>
-
-
-
-
                 </div>
-                <!-- post -->
-                <div class="card mt-4" style="width: 520px;">
+
+                <div class="card mt-4" style="width: 450px;">
                     <div style="display: flex; justify-content: space-between; ">
                         <div>
-                            <img src="th.jpeg" style="width: 40px; border-radius: 50%; height: 40px; margin: 10px;">
-                            <span>mahmoud 30min</span>
+                            <img src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                                style="width: 40px; border-radius: 50%; height: 40px; margin: 10px;">
+                            <span>Anymouns </span>
+                            <p class="fs-8 text-muted " style="margin-left: 10px;"><em class="pl-5">30m ago</em></p>
                         </div>
 
                         <div> <i class="bi bi-three-dots" style="font-size: 30px; margin: 15px;"></i>
@@ -216,14 +231,18 @@
                             necessitatibus aut, deleniti ad debitis quod autem impedit quaerat fugiat alias, iste
                             commodi amet itaque, facere eius magnam. Corporis. </p>
                     </div>
-                    <img src="th.jpeg" class="card-img-top">
+                    <img src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                        class="card-img-top">
 
                 </div>
-                <div class="card mt-4" style="width: 520px;">
+
+                <div class="card mt-4" style="width: 450px;">
                     <div style="display: flex; justify-content: space-between; ">
                         <div>
-                            <img src="th.jpeg" style="width: 40px; border-radius: 50%; height: 40px; margin: 10px;">
-                            <span>mahmoud 30min</span>
+                            <img src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                                style="width: 40px; border-radius: 50%; height: 40px; margin: 10px;">
+                            <span>Anymouns </span>
+                            <p class="fs-8 text-muted " style="margin-left: 10px;"><em class="pl-5">30m ago</em></p>
                         </div>
 
                         <div> <i class="bi bi-three-dots" style="font-size: 30px; margin: 15px;"></i>
@@ -237,94 +256,106 @@
                             necessitatibus aut, deleniti ad debitis quod autem impedit quaerat fugiat alias, iste
                             commodi amet itaque, facere eius magnam. Corporis. </p>
                     </div>
-                    <img src="th.jpeg" class="card-img-top">
+                    <img src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                        class="card-img-top">
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+            <div class="col ">
+                <div class="row">
+                    <div class="col-5">
+                        <i class="bi bi-three-dots" style="font-size: 15px; margin-left: 15px;"></i>
+                    </div>
+                    <div class="col">
+                        <div class="col" style="font-size: 15px;"> <i class="fa-solid fa-house"></i> Home </div>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                    <p><i class="fa-solid fa-cake-candles"></i> Birth days</p>
+                    <div> <img
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            style="border-radius: 50%; width: 40px; margin: 3px;"> <span class="fs-7">mohamed</span>
+                    </div>
+                    <div> <img
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            style="border-radius: 50%; width: 40px; margin: 3px;"> <span class="fs-7">mohamed</span>
+                    </div>
+                    <div> <img
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            style="border-radius: 50%; width: 40px; margin: 3px;"> <span class="fs-7">mohamed</span>
+                    </div>
+                    <div> <img
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            style="border-radius: 50%; width: 40px; margin: 3px;"> <span class="fs-7">mohamed</span>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <hr>
+
+
+                <div class="row">
+                    <p><i class="fa-brands fa-facebook-messenger"></i> contacts</p>
+                    <div> <img
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            style="border-radius: 50%; width: 40px; margin: 3px;"> <span class="fs-7">mohamed</span>
+                    </div>
+                    <div> <img
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            style="border-radius: 50%; width: 40px; margin: 3px;"> <span class="fs-7">mohamed</span>
+                    </div>
+                    <div> <img
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            style="border-radius: 50%; width: 40px; margin: 3px;"> <span class="fs-7">mohamed</span>
+                    </div>
+                    <div> <img
+                            src="https://i0.wp.com/itiworld.com/wp-content/uploads/2022/02/ITI_Logo_2018_blue-1.png?fit=680,680&ssl=1"
+                            style="border-radius: 50%; width: 40px; margin: 3px;"> <span class="fs-7">mohamed</span>
+                    </div>
 
                 </div>
             </div>
 
-            <div class="col-lg-3 fixed-column-right">
-
-                <div class="row">
-                    <div class="col-4"><i class="bi bi-three-dots" style="font-size: 30px; margin-left: 15px;"></i>
+        </div>
+        <!-- loout Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content text-center">
+                    <div class="modal-header text-center">
+                        <h1 class="modal-title fs-5 " id="exampleModalLabel">Log out</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="col-8">صفحتك وملفاتك الشخصيه</div>
-                    <div class="d-flex">
-                        <span class="mt-3">الدكتوره ميار لحل مشاكل القولوت</span>
-                        <img src="th.jpeg" style="width: 40px; border-radius: 50%; height: 40px; margin: 10px;">
-
+                    <div class="modal-body">
+                        You sure you want to log out>
                     </div>
-                    <div class="d-flex">
-                        <span class="mt-3  "> , جمهور التالته شمال الاهلي شجع </span>
-                        <img src="th.jpeg" style="width: 40px; border-radius: 50%; height: 40px; margin: 10px;">
-
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">no</button>
+                        <button type="button" id="logoutfun" class="btn btn-primary">yes</button>
                     </div>
-
-                </div>
-                <hr>
-
-                <div class="text-align ">اعياد الميلاد</div>
-                <hr>
-
-                <div class="row">
-                    <div class="col-7"><i class="bi bi-three-dots" style="font-size: 30px; margin-left: 15px;"></i>
-                    </div>
-                    <div class="col-5"> جهات الاتصال</div>
-
-                    <div> <img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>ITI
-                            smart</span></div>
-                    <div><img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>magic swap
-                            puzzle</span></div>
-                    <div> <img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span> togethet
-                            group </span></div>
-                    <div><img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>ITI 3
-                            month</span></div>
-                    <div> <img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>good
-                            mood</span></div>
-                    <div> <img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>ITI
-                            smart</span></div>
-                    <div><img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>magic swap
-                            puzzle</span></div>
-                    <div> <img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span> togethet
-                            group </span></div>
-                    <div><img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>ITI 3
-                            month</span></div>
-                    <div> <img src="th.jpeg" style="border-radius: 50%; width: 35px; margin: 10px;"> <span>good
-                            mood</span></div>
-
                 </div>
             </div>
         </div>
 
-
-
-    </div>
-
-    </div>
-
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog text-center">
-            <div class="modal-content text-center">
-                <div class="modal-header text-center">
-                    <h1 class="modal-title fs-5 text-center" id="staticBackdropLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    Are you sure you want to logout?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="logoutfun" type="button" class="btn btn-danger">logout</button>
-                </div>
-            </div>
-        </div>
-    </div><!-- endmodal logout -->
-
-    <script src="js/jsforbootstra.js"></script>
-    <script src="js/all.min.js"></script>
-    <script src="/js/jquery.js"></script>
-    <script src="js/myscript.js"></script>
-    <script src="js/home.js"></script>
+        <script src="js/jsforbootstra.js"></script>
+        <script src="js/all.min.js"></script>
+        <script src="/js/jquery.js"></script>
+        <script src="js/home.js"></script>
 </body>
 
 </html>
