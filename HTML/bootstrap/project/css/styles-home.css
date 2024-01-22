@@ -1,31 +1,136 @@
-.nav-link > *{
-    color: #352c2c;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 0 1rem;
-    padding: 0.5rem 0.5rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.3s ease-in-out;
-    
+.nav-link > * {
+  color: #352c2c;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 1rem;
+  padding: 0.5rem 0.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
 }
 
-svg :hover{
-    color: #105acace;
-    cursor: pointer;
+svg :hover {
+  color: #105acace;
+  cursor: pointer;
 }
 
-.nav-ghost{
-    background-color: transparent;
-    border: none;
-    color: #352c2c;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 0 1rem;
-    padding: 0.5rem 0.5rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.3s ease-in-out;
-    
-    height: 71px;
+.nav-ghost {
+  background-color: transparent;
+  border: none;
+  color: #352c2c;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 1rem;
+  padding: 0.5rem 0.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+
+  height: 71px;
+}
+
+.contactsrow div img {
+  width: min-max(20px, 50px);
+  height: 20px;
+  padding: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid #14df7a;
+  height: 71px;
+  border-radius: 50%;
+}
+.contactsrow div {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.contactsrow div img:hover {
+  border: 2px solid #105acace;
+  cursor: pointer;
+}
+
+.contactsrow div span {
+  margin-left: 1rem;
+  color: #352c2c;
+  font-weight: 500;
+  margin: 0 1rem;
+  padding: 0.5rem 0.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.welcomerow span {
+  color: rgb(65, 42, 42);
+  font-size: 1rem;
+  margin-left: 5px;
+  text-transform: capitalize;
+  width: 75%;
+  text-align: center;
+}
+
+.welcomerow span:hover {
+  color: #105acace;
+  cursor: pointer;
+}
+
+.welcomecol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  text-align: left;
+  margin-top: 1rem;
+  align-content: stretch;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.welcometxt {
+  position: relative;
+  border-radius: 50%;
+}
+.welcometxt:before {
+  content: " ";
+  position: absolute;
+  top: 15px;
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #76f17c;
+  z-index: 1000;
+}
+em {
+  color: rgba(109, 77, 77, 0.959);
+  font-size: small;
+}
+
+.time {
+  position: relative;
+}
+
+.time > em {
+  position: absolute;
+  top: -24px;
+  left: 52px;
+  color: rgba(109, 77, 77, 0.959);
+  font-size: 10px;
+}
+
+.hr-posts {
+  border: 3px solid #3b3e44ce;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .welcomerow {
+    margin-top: 50px;
+  }
 }

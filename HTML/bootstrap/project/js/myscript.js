@@ -1,15 +1,15 @@
 $(document).ready(function () {
-   
-     // show pass radio btn
-     showpass = $('#showpass');
-     const passwordlog = $('#passlogin');
-     showpass.click(function () {
-         if (passwordlog.attr('type') === 'password') {
+
+    // show pass radio btn
+    showpass = $('#showpass');
+    const passwordlog = $('#passlogin');
+    showpass.click(function () {
+        if (passwordlog.attr('type') === 'password') {
             passwordlog.attr('type', 'text');
-         } else {
+        } else {
             passwordlog.attr('type', 'password');
-         }
-     });
+        }
+    });
 
     // signup logic
     $('#signupform').submit(function (e) {
@@ -114,14 +114,14 @@ $(document).ready(function () {
             agreeTerms.removeClass('is-invalid');
         }
 
-        
 
-        reg(sform,firstName,lastName,email,password,dob,gender);
 
-        
-        
+        reg(sform, firstName, lastName, email, password, dob, gender);
 
-        
+
+
+
+
     });
 
     // login funcss
@@ -145,12 +145,12 @@ const signuser = {
 
 }
 
-function reg(sform,fname, lname, email, password, dob, gender) {
+function reg(sform, fname, lname, email, password, dob, gender) {
 
-    
+
     const users = JSON.parse(localStorage.getItem('users')) || [];
 
-    
+
 
     const user = users.find(user => user.email === email.val());
 
@@ -161,10 +161,10 @@ function reg(sform,fname, lname, email, password, dob, gender) {
         email.removeClass('is-valid');
         password.removeClass('is-valid');
         return alert('email already exist please login or use another email');
-        
+
     }
 
-    
+
 
     currentuser = signuser;
 
@@ -178,10 +178,10 @@ function reg(sform,fname, lname, email, password, dob, gender) {
     sform.reset();
     $('#signupmodal').modal('hide');
     console.log(users);
-    
+
     localStorage.setItem('users', JSON.stringify(users));
 
-    //remove valid class to be refactored
+    //! remove valid class to be refactored
     fname.removeClass('is-valid');
     lname.removeClass('is-valid');
     email.removeClass('is-valid');
@@ -205,14 +205,14 @@ function login() {
     if (!user) {
         email.addClass('is-invalid');
         return false;
-    }else{
+    } else {
         password.removeClass('is-invalid')
     }
 
     if (user.password !== password.val()) {
         password.addClass('is-invalid');
         return false;
-    }else{
+    } else {
         password.removeClass('is-invalid');
     }
     window.location.href = "home.html"
@@ -221,7 +221,7 @@ function login() {
     document.cookie = "useremail=" + user.email;
     $('#loginform')[0].reset();
 
-    
+
     return true;
 }
 
