@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    // show pass radio btn
+    // !show pass radio btn
     showpass = $('#showpass');
     const passwordlog = $('#passlogin');
     showpass.click(function () {
@@ -15,30 +15,25 @@ $(document).ready(function () {
     $('#signupform').submit(function (e) {
         e.preventDefault();
         // helper funcsss
-        // emty val
-        function isEmpty(value) {
-            return value.trim() === '';
-        }
 
-        // email val
+        // email val func
         function isValidEmail(email) {
             const emailreg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             return emailreg.test(email);
         }
-        // name val
+        // name val func
         function isValidName(name) {
             const usernameRegex = /^[a-zA-Z_]+$/
             return usernameRegex.test(name);
         }
+        // password val func
+        function isValidPassword(password) {
 
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+            // Minimum eight characters, at least one uppercase letter, one lowercase letter and one number:
 
-
-        // function isValidPassword(password) {
-
-        //     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-
-        //     return passwordRegex.test(password);
-        // }
+            return passwordRegex.test(password);
+        }
 
         // signup inputs
         const sform = document.getElementById('signupform');
@@ -57,12 +52,13 @@ $(document).ready(function () {
         const termserr = $('#err-terms')
         // Validation checks
 
-        // birth val
+        // birth val vars
         const selectedDOB = new Date(dob.val());
         const currentDate = new Date();
         const ageDifferenceInMilliseconds = currentDate - selectedDOB;
         const ageDifferenceInYears = ageDifferenceInMilliseconds / (365 * 24 * 60 * 60 * 1000);
-
+        //!validations
+        // age val
         if (ageDifferenceInYears < 18) {
             errdob.text('You must be above 18 years old.');
             dob.addClass('is-invalid');
@@ -73,7 +69,7 @@ $(document).ready(function () {
         }
 
 
-
+        // email val
         if (!isValidEmail(email.val())) {
             email.addClass('is-invalid')
             errmail.text('invalied email')
@@ -83,7 +79,7 @@ $(document).ready(function () {
             email.removeClass('is-invalid')
             email.addClass('is-valid')
         }
-
+        // fname val
         if (!isValidName(firstName.val())) {
             firstName.addClass('is-invalid')
             errfname.text('Invalid first name');
@@ -94,7 +90,7 @@ $(document).ready(function () {
             firstName.addClass('is-valid')
         }
 
-
+        // lname val
         if (!isValidName(lastName.val())) {
             lastName.addClass('is-invalid')
             lastName.text('Invalid last name');
@@ -105,6 +101,16 @@ $(document).ready(function () {
             lastName.addClass('is-valid')
         }
 
+        // password val
+        if (!isValidPassword(password.val())) {
+            password.addClass('is-invalid')
+            password.text('Invalid password you must have at least 8 chars, one upper, one lower and one number');
+        } else {
+            password.removeClass('is-invalid')
+            password.addClass('is-valid')
+        }
+
+        // terms val
         if (!agreeTerms.prop('checked')) {
             termserr.text('You must agree before submitting.');
             agreeTerms.addClass('is-invalid');
@@ -113,6 +119,8 @@ $(document).ready(function () {
             termserr.text('');
             agreeTerms.removeClass('is-invalid');
         }
+
+
 
 
 
@@ -168,8 +176,8 @@ function reg(sform, fname, lname, email, password, dob, gender) {
 
     currentuser = signuser;
 
-    currentuser.name = fname.val() + " " + lname.val();
-    currentuser.email = email.val();
+    currentuser.name = fname.val().replace(/\s/g, ''); + " " + lname.val().replace(/\s/g, '');;
+    currentuser.email = email.val().replace(/\s/g, '');
     currentuser.password = password.val();
     currentuser.dob = dob.val();
     currentuser.gender = gender.val()
@@ -198,7 +206,7 @@ function login() {
     const email = $('#emaillogin');
     console.log(email.val());
     const password = $('#passlogin');
-    const users = JSON.parse(localStorage.getItem('users')) || alert('email not found please signup');
+    const users = JSON.parse(localStorage.getItem('users')) || alert('emails not found please signup');
     console.log(users);
     const user = users.find(user => user.email === email.val());
 

@@ -79,7 +79,7 @@ svg :hover {
   cursor: pointer;
 }
 
-.welcomecol {
+.welcomecol  {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -95,6 +95,11 @@ svg :hover {
   position: relative;
   border-radius: 50%;
 }
+
+.welcomerow{
+  
+  padding: 10px;
+}
 .welcometxt:before {
   content: " ";
   position: absolute;
@@ -104,7 +109,7 @@ svg :hover {
   height: 10px;
   border-radius: 50%;
   background: #76f17c;
-  z-index: 1000;
+  z-index: 800;
 }
 em {
   color: rgba(109, 77, 77, 0.959);
@@ -121,16 +126,92 @@ em {
   left: 52px;
   color: rgba(109, 77, 77, 0.959);
   font-size: 10px;
+  
 }
 
-.hr-posts {
-  border: 3px solid #3b3e44ce;
-  width: 100%;
-  margin-top: 1rem;
-}
 
-@media screen and (max-width: 600px) {
-  .welcomerow {
-    margin-top: 50px;
+
+/* adjust for small screns 390 *844 */
+
+@media screen and (max-width: 390px) {
+  .welcomerow span {
+    font-size: 0.8rem;
   }
+  .welcomerow {
+    padding: 0px;
+  }
+  .welcometxt:before {
+    top: 10px;
+    left: -10px;
+    width: 8px;
+    height: 8px;
+  }
+  .welcometxt {
+    font-size: 0.8rem;
+  }
+  .time > em {
+    top: -20px;
+    left: 40px;
+    font-size: 8px;
+  }
+  .time {
+    font-size: 0.8rem;
+  }
+  .contactsrow div img {
+    width: min-max(20px, 50px);
+    height: 20px;
+    padding: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #14df7a;
+    height: 71px;
+    border-radius: 50%;
+  }
+  .contactsrow div span {
+    margin-left: 1rem;
+    color: #352c2c;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 0.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+  }
+  .contactsrow div {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+  .contactsrow div img:hover {
+    border: 2px solid #105acace;
+    cursor: pointer;
+  }
+  .nav-link > * {
+    color: #352c2c;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 0.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+  }
+  .nav-ghost {
+    background-color: transparent;
+    border: none;
+    color: #352c2c;
+    font-size: 1rem;
+  
 }
+.midpage {
+  margin-top: 100px !important;
+  justify-content: center;
+
+}
+
+
+

@@ -14,8 +14,3 @@ footer{
 
 /*  on small scremms */
 
-@media screen and (max-width: 600px) {
-    .midpage{
-        margin-top: 25% !important;
-    }
-}
