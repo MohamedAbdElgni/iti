@@ -1,0 +1,18 @@
+.progress {
+  height: 10%;
+  border-radius: 0;
+}
+
+.progress-bar {
+  background-color: #959aa3;
+  width: attr('data')
+}
+
+.label {
+  font-size: min(1.5em, 3vw);
+  font-weight: bold;
+  vertical-align: middle;
+  padding-top: 10px;
+  background-color: rgb(187, 158, 123);
+  text-transform: uppercase;
+}
