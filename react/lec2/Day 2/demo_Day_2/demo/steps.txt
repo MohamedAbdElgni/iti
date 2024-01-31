@@ -1,0 +1,43 @@
+to make components: 
+
+        class components:  < 16.8
+            1- Life Cycle Method --> function call in spfic time  (mounting, updating, unmouting)
+                constructor
+                render
+                componentDidMount  --> Call API
+                componentDidUpdate --> filteraion, search
+                componentWillUnmount --> delete localstorage, close timer 
+
+            2- state, setState --> Local data
+
+            3- props --> Shared Data between components
+
+
+        function components: hooks  are used for functions based components
+
+            1- life cycle method --> useEffect 
+
+                componentDidMount: 
+
+                componentDidUpdate
+                componentWillUnmount
+
+            2- state setState --> useState
+ __________________________________________________
+
+
+ 1- create component 
+ 2- create your form (bootstrap)
+ 3- for each input --> add 
+                value
+                onChange
+                name 
+4- define state - setState --> To Control Your Inputs 
+
+5- define onChange 
+
+6- get the value from event --> e.target.value
+
+7- Handle Validation:   
+    define state --> errors setErrors 
+8- set validation rules
