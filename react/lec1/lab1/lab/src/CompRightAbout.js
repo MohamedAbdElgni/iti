@@ -1,12 +1,7 @@
 import React from "react";
 import MainBtn from "./MainBtn";
 class CompRightAbout extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: 'Component Right About'
-        };
-    }
+    
     render() {
         return (
 

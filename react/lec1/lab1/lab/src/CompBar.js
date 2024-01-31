@@ -1,12 +1,7 @@
 import React from "react";
 import './progress.css'
 class CompBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: 'progress bar'
-        };
-    }
+    
     render() {
         return (
                 <div className="progress mb-3">

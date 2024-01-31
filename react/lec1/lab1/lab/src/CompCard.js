@@ -1,12 +1,6 @@
 import React from "react";
 
 class CompCard extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: 'Component Card'
-        };
-    }
 
     render() {
 

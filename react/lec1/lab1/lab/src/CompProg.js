@@ -2,12 +2,7 @@ import React from "react";
 import HeaderOne from "./HeaderOne";
 import CompCard from "./CompCard";
 class CompProg extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: 'Component Programming'
-        };
-    }
+    
 
     render() {
 

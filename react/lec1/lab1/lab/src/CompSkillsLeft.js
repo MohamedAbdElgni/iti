@@ -2,12 +2,7 @@ import React from "react";
 
 class CompSkillsLeft extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: 'Component Skills Left'
-        };
-    }
+    
 
     render() {
         return (
