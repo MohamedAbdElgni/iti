@@ -17,6 +17,7 @@ function Text(props) {
             helperText={props.helperText}
             name={props.name}
             fullWidth={true}
+            className={props.className}
         />
         
         </div>

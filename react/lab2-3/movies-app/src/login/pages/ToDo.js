@@ -19,7 +19,8 @@ function ToDo() {
 
     const AddTask = () => {
         if (newTask.trim() !== '') {
-            setTasks([...tasks, newTask]);
+            setTasks([...tasks, { done: false, t: newTask }]);
+            console.log(tasks);
             setNewTask('');
         }
     };
@@ -31,9 +32,9 @@ function ToDo() {
     };
 
     const TaskDone = (index) => {
-        const x = document.getElementById(index);
-
-        x.classList.add("done-task");
+        const updatedTasks = [...tasks];
+        updatedTasks[index].done = !updatedTasks[index].done;
+        setTasks(updatedTasks);
 
 
 
@@ -56,10 +57,10 @@ function ToDo() {
             />
 
             <List>
-                {tasks.map((task, index) => (
+                {tasks.map(({ done, t }, index) => (
                     <>
                         <ListItem key={index} >
-                            <ListItemText primary={task} id={index} />
+                            <ListItemText primary={t} id={index} className={done ? 'done-task' : ''} />
                             <IconButton aria-label="delete" onClick={() => DelTask(index)}>
                                 <DeleteIcon />
                             </IconButton>
