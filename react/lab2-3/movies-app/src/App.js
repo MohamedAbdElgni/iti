@@ -1,8 +1,8 @@
 
 import './App.css';
 import { Container } from '@mui/material';
-//import Login from './login/pages/Login';
-//import Regester from './login/pages/Regester';
+import Login from './login/pages/Login';
+import Regester from './login/pages/Regester';
 import ToDo from './login/pages/ToDo';
 import ResponsiveAppBar from './nav/NavBar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';

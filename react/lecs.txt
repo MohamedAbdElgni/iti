@@ -1,0 +1,29 @@
+lec1:
+    -part1:
+    https://itihub.sharepoint.com/sites/ITPBeni-SuefR2-2324Python/_layouts/15/stream.aspx?id=%2Fsites%2FITPBeni%2DSuefR2%2D2324Python%2FShared%20Documents%2FGeneral%2FRecordings%2FPython%20Meeting%20BeniSuef%2D20240130%5F091743%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
+    -part2:
+    https://itihub.sharepoint.com/sites/ITPBeni-SuefR2-2324Python/_layouts/15/stream.aspx?id=%2Fsites%2FITPBeni%2DSuefR2%2D2324Python%2FShared%20Documents%2FGeneral%2FRecordings%2FPython%20Meeting%20Beni%2DSuef%2D20240130%5F113129%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
+
+
+lec2:
+    part1:
+    https://itihub.sharepoint.com/sites/ITPBeni-SuefR2-2324Python/_layouts/15/stream.aspx?id=%2Fsites%2FITPBeni%2DSuefR2%2D2324Python%2FShared%20Documents%2FGeneral%2FRecordings%2FPython%20Meeting%20BeniSuef%2D20240131%5F082445%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
+    part2:
+    https://itihub.sharepoint.com/sites/ITPBeni-SuefR2-2324Python/_layouts/15/stream.aspx?id=%2Fsites%2FITPBeni%2DSuefR2%2D2324Python%2FShared%20Documents%2FGeneral%2FRecordings%2FPython%20Meeting%20Beni%2DSuef%2D20240131%5F103818%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
+
+lec3:
+    -part1:
+    https://itihub.sharepoint.com/sites/ITPBeni-SuefR2-2324Python/_layouts/15/stream.aspx?id=%2Fsites%2FITPBeni%2DSuefR2%2D2324Python%2FShared%20Documents%2FGeneral%2FRecordings%2FPython%20Meeting%20Beni%2DSuef%2D20240201%5F100352%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
+    -part2:
+    https://itihub.sharepoint.com/sites/ITPBeni-SuefR2-2324Python/_layouts/15/stream.aspx?id=%2Fsites%2FITPBeni%2DSuefR2%2D2324Python%2FShared%20Documents%2FGeneral%2FRecordings%2FPython%20Meeting%20Beni%2DSuef%2D20240201%5F111406%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
+
+lec4:
+    -part1:
+    https://itihub.sharepoint.com/sites/ITPBeni-SuefR2-2324Python/_layouts/15/stream.aspx?id=%2Fsites%2FITPBeni%2DSuefR2%2D2324Python%2FShared%20Documents%2FGeneral%2FRecordings%2FPython%20Meeting%20BeniSuef%2D20240204%5F074417%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
+    -part2:
+    https://itihub.sharepoint.com/sites/ITPBeni-SuefR2-2324Python/_layouts/15/stream.aspx?id=%2Fsites%2FITPBeni%2DSuefR2%2D2324Python%2FShared%20Documents%2FGeneral%2FRecordings%2FPython%20Meeting%20Beni%2DSuef%2D20240204%5F094806%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
+    -part3:
+    https://itihub.sharepoint.com/sites/ITPBeni-SuefR2-2324Python/_layouts/15/stream.aspx?id=%2Fsites%2FITPBeni%2DSuefR2%2D2324Python%2FShared%20Documents%2FGeneral%2FRecordings%2FPython%20Meeting%20Beni%2DSuef%2D20240204%5F110410%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
+lec5:
+
+https://itihub.sharepoint.com/sites/ITPBeni-SuefR2-2324Python/_layouts/15/stream.aspx?id=%2Fsites%2FITPBeni%2DSuefR2%2D2324Python%2FShared%20Documents%2FGeneral%2FRecordings%2FPython%20Meeting%20BeniSuef%2D20240205%5F123600%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
