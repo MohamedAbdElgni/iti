@@ -28,7 +28,8 @@ if __name__ == "__main__":
     myq.insert(3)
     myq.insert(4)
     myq.insert(5)
-    myq.pop()
+    
+    print(myq.pop())
     myq.pop()
     print(myq.is_empty())
     myq.pop()

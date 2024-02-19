@@ -2,12 +2,13 @@ import requests
 import json
 import datetime
 class Weather:
-    key="7fc4da61c2cf46aa89840215241802"
+    def __init__(self ,key):
+        self.key = key
     baseurl="http://api.weatherapi.com/v1"
     today=datetime.datetime.now()
-    @classmethod
-    def get_current_temperature(cls,city):
-        url=cls.baseurl+"/current.json?key="+cls.key+"&q="+city
+    
+    def get_current_temperature(self,city):
+        url=self.baseurl+"/current.json?key="+self.key+"&q="+city
         response=requests.get(url)
         if response.status_code!=200:
             print(f"Error: {response.status_code}")
@@ -15,16 +16,22 @@ class Weather:
         data=response.json()["current"]["temp_c"]
         print(f"The curreant temp in {city} is {data} C")
         return 
-    @classmethod
-    def get_temperature_after(cls,city,days=2,hour=None):
-        selected_date=cls.today+datetime.timedelta(days=days)
-        url=cls.baseurl+"/forecast.json?key="+cls.key+"&q="+city+"&dt="+selected_date.strftime("%Y-%m-%d")
-        if not hour or hour>24 or hour<0 :
+    
+    def get_temperature_after(self,city,days=2,hour=None):
+        selected_date=self.today+datetime.timedelta(days=days)
+        url=self.baseurl+"/forecast.json?key="+self.key+"&q="+city+"&dt="+selected_date.strftime("%Y-%m-%d")
+        if hour!=None and (hour<0 or hour>24):
             raise ValueError("wrong hour should be in 24 formate")
         
-            data=response.json()["forecast"]["forecastday"][0]["day"]["avgtemp_c"]
-            print(f"The temp in {city} after {days} days is {data} C")
+        elif hour==None:
+            response=requests.get(url)
+            if response.status_code!=200:
+                print(f"Error: {response.status_code}")
+                return
+            data=response.json()["forecast"]["forecastday"][0]["day"]["maxtemp_c"]
+            print(f"max temp in {city} after {days} days is {data} C")
             return
+        
         else:
             url+="&hour="+str(hour)
             response=requests.get(url)
@@ -35,9 +42,9 @@ class Weather:
             print(f"temp in {city} after {days} days at {hour} is {data} C")
             return
         
-    @classmethod
-    def get_lat_long(cls,city):
-        url=cls.baseurl+"/search.json?key="+cls.key+"&q="+city
+        
+    def get_lat_long(self,city):
+        url=self.baseurl+"/search.json?key="+self.key+"&q="+city
         response=requests.get(url)
         if response.status_code!=200:
             print(f"Error: {response.status_code}")
@@ -48,6 +55,9 @@ class Weather:
         return
     
 if __name__ == "__main__":
-    Weather.get_current_temperature("cairo")
-    Weather.get_temperature_after("cairo",2,8)
-    Weather.get_lat_long("cairo")
+    myweather=Weather("7fc4da61c2cf46aa89840215241802")
+    myweather.get_current_temperature("cairo")
+    myweather.get_temperature_after("cairo",2)
+    myweather.get_temperature_after("cairo",2,12)
+    myweather.get_lat_long("cairo")
+    
